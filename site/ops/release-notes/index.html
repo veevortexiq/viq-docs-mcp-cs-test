@@ -4443,6 +4443,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release Notes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4459,6 +4477,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#february-13-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        February 13, 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="February 13, 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-enhancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Enhancement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4663,6 +4728,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#february-13-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        February 13, 2026
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="February 13, 2026">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-enhancement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Enhancement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4702,6 +4803,21 @@
 
 
 <h1 id="release-notes">Release Notes</h1>
+<h2 id="february-13-2026">February 13, 2026</h2>
+<h3 id="security-enhancement">Security Enhancement</h3>
+<p><strong>Google Analytics &amp; Google Ads Agents</strong></p>
+<p>We've enhanced the security credential retrieval mechanism for our analytics agents. This improvement makes credential lookup more efficient while maintaining robust security standards.</p>
+<p><strong>What Changed:</strong>
+- Simplified credential lookup process for Google Analytics Insights and Google Ads Performance agents
+- Credentials are now queried by integration ID only, streamlining the authentication process</p>
+<p><strong>Impact:</strong> 
+- 🔒 Improved privacy and security for credential management
+- ✅ No user-facing impact - agents continue to function exactly as before
+- ⚡ More efficient credential retrieval process</p>
+<p><strong>Affected Agents:</strong>
+- Google Analytics Insights
+- Google Ads Performance</p>
+<p><strong>Commit Reference:</strong> <code>b2bbf361</code></p>
 <hr />
 <p><a class="md-button" href="../../">← Back to Help Centre</a></p>
 
