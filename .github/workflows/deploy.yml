@@ -1,0 +1,284 @@
+# VIQ-DOCS DEPLOYMENT
+# Auto-deploys to staging (app-staging.vortexiq.ai/docs/) and production (app.vortexiq.ai/docs/)
+
+name: Deploy Docs
+
+on:
+  push:
+    branches:
+      - Staging
+  
+  repository_dispatch:
+    types: [deploy-docs]
+  
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for deployment'
+        required: false
+        default: 'Manual staging deployment'
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy to Staging
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || github.event.client_payload.environment != 'production'
+    
+    steps:
+      - name: Checkout Staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: Staging
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Update site_url for staging
+        run: |
+          sed -i 's|site_url:.*|site_url: https://app-staging.vortexiq.ai/docs|' mkdocs.yml
+          echo "Updated mkdocs.yml:"
+          grep "site_url" mkdocs.yml
+      
+      - name: Fetch Release Notes from Agentic-workflow
+        env:
+          GH_TOKEN: ${{ secrets.VIQ_DOCS_PAT }}
+        run: |
+          # Create release-notes directory in docs
+          mkdir -p docs/ops/release-notes
+          
+          # Fetch CHANGELOG.md from Agentic-workflow Staging branch (with auth for private repo)
+          curl -s -H "Accept: application/vnd.github.v3.raw" \
+            -H "Authorization: token $GH_TOKEN" \
+            "https://api.github.com/repos/royalschoolofmgt/Agentic-workflow/contents/CHANGELOG.md?ref=Staging" \
+            -o docs/ops/release-notes/changelog.md
+          
+          # Check if fetch was successful
+          if [ ! -s docs/ops/release-notes/changelog.md ] || grep -q "Not Found" docs/ops/release-notes/changelog.md 2>/dev/null; then
+            echo "CHANGELOG.md not found, creating placeholder..."
+            cat > docs/ops/release-notes/changelog.md << CHANGELOG_EOF
+          # Changelog
+          
+          All notable changes to VortexIQ will be documented here.
+          
+          ## [Unreleased]
+          
+          *No releases yet. Changelog will be automatically updated when Release Please creates releases.*
+          
+          ---
+          
+          See [Conventional Commits](https://www.conventionalcommits.org/) for commit message format.
+          CHANGELOG_EOF
+          fi
+          
+          # Create a release notes index with actual date and inline changelog
+          CURRENT_DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
+          
+          # Extract latest release section from changelog (everything up to second ## heading)
+          LATEST_CHANGES=$(awk '/^## \[/{if(++count==2)exit}count>=1' docs/ops/release-notes/changelog.md | tail -n +2)
+          
+          cat > docs/ops/release-notes/index.md << INDEX_EOF
+          # Release Notes
+          
+          This page contains the latest release notes and changelog for VortexIQ.
+          
+          !!! warning "Staging Preview"
+              You are viewing the **STAGING** version of release notes.
+              These changes are pending review before production release.
+          
+          ## Latest Release
+          
+          ${LATEST_CHANGES}
+          
+          ---
+          
+          📋 [View Full Changelog](./changelog.md) for complete release history.
+          
+          ---
+          
+          *Last updated: ${CURRENT_DATE}*
+          INDEX_EOF
+          
+          echo "Release notes prepared:"
+          ls -la docs/ops/release-notes/
+          echo "--- changelog.md content ---"
+          head -20 docs/ops/release-notes/changelog.md
+      
+      - name: Build MkDocs
+        run: |
+          # Build without --strict to allow warnings (broken links in docs)
+          mkdocs build
+          echo "Build completed. Files:"
+          ls -la site/ | head -15
+      
+      - name: Create wrangler.toml
+        run: |
+          cat > wrangler.toml << EOF
+          name = "viq-docs-staging"
+          compatibility_date = "2025-12-05"
+          
+          [assets]
+          directory = "./site"
+          EOF
+          cat wrangler.toml
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      
+      - name: Deployment Summary
+        run: |
+          echo "## 🚀 Staging Docs Deployed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**URL**: https://app-staging.vortexiq.ai/docs/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Worker**: viq-docs-staging" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            echo "**Triggered by**: ${{ github.event.client_payload.triggered_by }}" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  build-and-deploy-production:
+    name: Build and Deploy to Production
+    runs-on: ubuntu-latest
+    if: github.event.client_payload.environment == 'production'
+    
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Update site_url for production
+        run: |
+          sed -i 's|site_url:.*|site_url: https://app.vortexiq.ai/docs|' mkdocs.yml
+          echo "Updated mkdocs.yml for production:"
+          grep "site_url" mkdocs.yml
+      
+      - name: Fetch Release Notes from Agentic-workflow
+        env:
+          GH_TOKEN: ${{ secrets.VIQ_DOCS_PAT }}
+        run: |
+          # Create release-notes directory in docs
+          mkdir -p docs/ops/release-notes
+          
+          # Fetch CHANGELOG.md from Agentic-workflow appprod branch (with auth for private repo)
+          curl -s -H "Accept: application/vnd.github.v3.raw" \
+            -H "Authorization: token $GH_TOKEN" \
+            "https://api.github.com/repos/royalschoolofmgt/Agentic-workflow/contents/CHANGELOG.md?ref=appprod" \
+            -o docs/ops/release-notes/changelog.md
+          
+          # Check if fetch was successful
+          if [ ! -s docs/ops/release-notes/changelog.md ] || grep -q "Not Found" docs/ops/release-notes/changelog.md 2>/dev/null; then
+            echo "CHANGELOG.md not found, creating placeholder..."
+            cat > docs/ops/release-notes/changelog.md << 'CHANGELOG_EOF'
+          # Changelog
+          
+          All notable changes to VortexIQ will be documented here.
+          
+          ## [Unreleased]
+          
+          *No releases yet.*
+          CHANGELOG_EOF
+          fi
+          
+          # Create a release notes index with actual date and inline changelog
+          CURRENT_DATE=$(date '+%Y-%m-%d %H:%M:%S UTC')
+          
+          # Extract latest release section from changelog (everything up to second ## heading)
+          LATEST_CHANGES=$(awk '/^## \[/{if(++count==2)exit}count>=1' docs/ops/release-notes/changelog.md | tail -n +2)
+          
+          cat > docs/ops/release-notes/index.md << INDEX_EOF
+          # Release Notes
+          
+          This page contains the latest release notes for VortexIQ.
+          
+          ## Latest Release
+          
+          ${LATEST_CHANGES}
+          
+          📋 [View Full Changelog](./changelog.md)
+          
+          *Last updated: ${CURRENT_DATE}*
+          INDEX_EOF
+          
+          echo "Release notes prepared:"
+          ls -la docs/ops/release-notes/
+      
+      - name: Build MkDocs
+        run: |
+          # Build without --strict to allow warnings (broken links in docs)
+          mkdocs build
+          echo "Build completed. Files:"
+          ls -la site/ | head -15
+      
+      - name: Create wrangler.toml for production
+        run: |
+          cat > wrangler.toml << 'EOF'
+          name = "viq-docs-production"
+          compatibility_date = "2025-12-05"
+          
+          [assets]
+          directory = "./site"
+          EOF
+          cat wrangler.toml
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      
+      - name: Production Deployment Summary
+        run: |
+          echo "## 🚀 Production Docs Deployed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**URL**: https://app.vortexiq.ai/docs/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Worker**: viq-docs-production" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version**: ${{ github.event.client_payload.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Tag**: ${{ github.event.client_payload.tag }}" >> $GITHUB_STEP_SUMMARY

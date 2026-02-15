@@ -1,0 +1,35 @@
+/* Make the content area wider (GitBook style) */
+.md-content {
+  max-width: 1400px !important;   /* GitBook-like width */
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Increase width of prose inside article */
+.md-content__inner {
+  max-width: 1200px !important;
+}
+
+/* Make header and footer span full width */
+.md-header,
+.md-footer {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Avoid shrinking on short pages */
+.md-main {
+  min-height: calc(100vh - 200px); /* prevents footer from floating upward */
+  display: flex;
+  flex-direction: column;
+}
+
+.md-main__inner {
+  flex: 1;
+}
+
+/* Improve spacing for wider pages */
+.md-typeset {
+  font-size: 0.70rem;
+  line-height: 1.5;
+}

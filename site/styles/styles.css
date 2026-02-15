@@ -1,0 +1,473 @@
+/* styles.css */
+
+
+:root {
+    /* --primary: #000000;  CONFLICT: Removed to allow extra.css purple to take precedence */
+    --primary: #5529D6;
+    /* Updated to match Brand Guide */
+    --accent: #9400d3;
+    /* Dark Violet (Web)*/
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --text-gray: #00293b;
+    --card-bg: #ffffff;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    margin: 0;
+}
+
+/* Hero Section - Infinite Background Method */
+.hero {
+    /* 1. Reset standard layout */
+    position: relative;
+    z-index: 0;
+    isolation: isolate; /* Keep ::before behind text but above page background */
+    max-width: 100%;
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+    margin-bottom: 0;
+    color: #0F1220;
+    
+    /* 2. Ensure text stays above the background */
+    background: transparent; /* Transparent so pseudo-element shows */
+}
+
+/* 3. Create the "Fake" Full-Width Background */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    
+    /* Make it massive to ensure no gaps ever */
+    width: 200vw; 
+    
+    /* Center it perfectly */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Gradient background */
+    background-image: linear-gradient(to left bottom, #6136e0, #542dc5, #4724ac, #3a1c92, #2e147a);
+    z-index: -1; /* Put it behind the text */
+}
+
+/* Keep hero text above the background layer */
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+/* Hero Title */
+.md-typeset .hero h1 {
+    font-size: 2rem !important;
+    font-weight: 700;
+    color: #fff !important;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+/* Hero Subtitle */
+.hero p {
+    font-size: 1.1rem !important;
+    color: #ffffff !important;
+    margin: 0 auto 20px auto;
+    max-width: 600px;
+}
+
+/* Ensure the text inside doesn't stretch too wide (readability) */
+.hero h1, .hero p {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.search-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Concept Section */
+.concept-section {
+    background: white;
+    padding: 3rem 1rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+.concept-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.concept-tag {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+/* Documentation Grid */
+.docs-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Legacy card styles - kept for backward compatibility */
+.card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e1e4e8;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.1);
+    border-color: #6a0dad;
+}
+
+.card h3 {
+    color: #0F1220;
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* footer {
+    background: var(--primary);
+    color: #94a3b8;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+} */
+
+/* Body text links */
+.md-content {
+    --md-typeset-a-color: #0f172a;
+    --md-accent-fg-color: #8f00ff;
+}
+
+.md-content .md-typeset a {
+    color: #000080;
+}
+
+.md-content .md-typeset a:hover {
+    color: #8f00ff;
+}
+
+.md-footer .footer-right .footer-link {
+    text-decoration: none;
+}
+
+.md-footer .footer-right .footer-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Card icon styling - for icons within card titles (legacy support) */
+.card .icon {
+    font-size: 1.1rem !important;
+    margin-right: 8px;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.card .icon img {
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: contain;
+}
+
+
+/* ==========================================================================
+   3. HOMEPAGE CONTENT STYLING (From your HTML)
+   ========================================================================== */
+
+/* Main Container */
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 1.5rem 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure content is centered with balanced spacing */
+.md-content__inner {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    box-sizing: border-box !important;
+}
+
+.md-content__inner:before {
+    content: "";
+    display: block;
+    height: 0;
+}
+
+@media (max-width: 76.1875em) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .md-content__inner {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+@media (max-width: 37.5em) {
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .md-content__inner {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+}
+
+/* Grid Titles */
+.grid-section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 40px;
+    color: #0F1220;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.grid-section-title:first-child { margin-top: 50px; }
+
+.grid-section-title img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Grid Layout - Only apply 4 columns when explicitly set via inline styles */
+.card-grid {
+    display: grid;
+    gap: 24px;
+    margin-bottom: 40px;
+    width: 100%;
+    justify-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+@media (max-width: 56.25em) {
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 37.5em) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ensure cards in grid have consistent height */
+.card-grid .card {
+    height: 100%;
+}
+
+/* Card Styling */
+.card {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 24px;
+    text-decoration: none !important; /* Remove underline */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.2s ease-in-out;
+    color: inherit !important;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(106, 13, 173, 0.1);
+    border-color: #6a0dad; /* Vortex Purple */
+}
+
+.card h3 { 
+    margin: 0 0 10px 0 !important; 
+    font-size: 1.1rem !important; 
+    color: #0F1220 !important; 
+    font-weight: 600; 
+}
+
+.card p { 
+    margin: 0 !important; 
+    font-size: 0.95rem !important; 
+    color: #666 !important; 
+    line-height: 1.5; 
+}
+
+.card-icon {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    background: #f4f6f8;
+    padding: 6px;
+    border-radius: 8px;
+    width: fit-content;
+    line-height: 1;
+}
+
+.card-icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Home intro full-width banner */
+.home-intro {
+    margin-top: 33px !important;
+    position: relative;
+    margin: 0 0 24px;
+    padding: 24px 49px;
+    color: #fff;
+    background-image: linear-gradient(to left bottom, #6136e0, #5b32cf, #542dc5, #4724ac, #3a1c92, #2e147a);
+    width: 100%;
+    border-radius: 12px;
+    background-size: 200% 200%;
+    animation: homeIntroGradient 18s ease-in-out infinite;
+}
+
+.home-intro h2,
+.home-intro p {
+    color: #fff !important;
+}
+
+@keyframes homeIntroGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Status Dot Animation */
+.status-dot {
+    height: 10px; width: 10px; background-color: #2ecc71;
+    border-radius: 50%; display: inline-block; margin-right: 8px;
+    box-shadow: 0 0 0 2px rgba(46, 204, 113, 0.2);
+    animation: pulse 2s infinite;
+}
+
+/* Status badge placement inside cards */
+.card {
+    position: relative;
+}
+
+.card .status-dot {
+    position: absolute;
+    top: 18px;
+    right: 56px;
+    margin-right: 0;
+}
+
+.card .status-dot + span {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 0.85rem;
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}

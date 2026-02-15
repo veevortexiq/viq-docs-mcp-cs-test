@@ -1,0 +1,233 @@
+site_name: Help Centre
+site_url: https://www.vortexiq.ai/docs
+copyright: "© 2026 Vortex IQ. All rights reserved."
+
+use_directory_urls: true
+
+theme:
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.png
+  features:
+    - admonition
+    - content.code.annotate
+    # - navigation.expand
+    # - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    # - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  font:
+    text: Inter         # Loads 'Inter' for all regular text
+    code: Roboto Mono   # Standard coding font (optional)
+     
+  palette:
+    - scheme: default
+      primary: white
+      accent: deep purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    
+  custom_dir: 'overrides'
+  footer: false
+
+extra_css:
+  - styles/admonitions.css
+  - styles/banner.css
+  - styles/footer.css
+  - styles/page-width.css
+  - styles/support.css
+  - styles/styles.css  
+  - styles/extra.css
+
+    
+plugins:
+  - search
+
+
+extra_javascript: 
+  - scripts/academy-links.js
+  - scripts/banner.js
+  - scripts/disable-divider.js
+  - scripts/mobile-nav.js
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed
+  - pymdownx.magiclink
+  - attr_list
+  - md_in_html
+
+watch:
+  - docs/assets
+
+
+  
+# Navigation
+nav:
+  - Home: index.md
+  - Nerve Centre: nerve-centre.md
+  - Vortex Mind: vortex-mind.md
+  - Ask Viq: ask-viq.md
+  - Agent Hub:
+      - Agents: agent-hub/index.md
+      - BigCommerce:
+          - Image Compression Agent: agent-hub/bigcommerce/image-compression-agent.md
+          - Image Optimisation Agent: agent-hub/bigcommerce/image-optimisation-agent.md
+          - KPI Agent: agent-hub/bigcommerce/kpi-agent.md
+          - SEO Pages Agent: agent-hub/bigcommerce/seo-pages-agent.md
+          - Product SEO Agent: agent-hub/bigcommerce/product-seo-agent.md
+          - StagingPro Agent: agent-hub/bigcommerce/stagingpro-bigcommerce-agent.md
+              
+      - Shopify:
+          - AI Growth Advisor Agent: agent-hub/shopify/ai-growth-advisor-agent.md
+          - AI Growth Advisor - Insights Agent: agent-hub/shopify/ai-growth-advisor-insights.md
+          - Nerve Centre Agent: agent-hub/shopify/nerve-centre-agent.md
+          - Pages SEO Agent: agent-hub/shopify/pages-seo-agent.md
+          - Product SEO Agent: agent-hub/shopify/product-seo-agent.md
+          - Image Agent: agent-hub/shopify/image-agent.md
+          - KPI Agent: agent-hub/shopify/kpi-agent.md
+          - Discount Creator Agent: agent-hub/shopify/discount-creator-agent.md
+          
+      - Adobe Commerce:
+          - Image Optimisation Agent: agent-hub/adobe/image-optimisation-agent.md
+          - Pages SEO Agent: agent-hub/adobe/pages-seo-agent.md
+          - Product SEO Agent: agent-hub/adobe/product-seo-agent.md
+          
+      - Others:
+          - Artifact Multimodal Agent: agent-hub/others/artifact-multimodal-agent.md
+          - Ask VIQ Agent: agent-hub/others/ask-viq-agent.md
+          - Competitor Agent: agent-hub/others/competitor-agent.md
+          - Connector Agent: agent-hub/others/connector-agent.md
+          - Campaign Manager - Dotdigital Agent: agent-hub/others/campaign-manager-dotdigital-agent.md
+          - Email Sender - Dotdigital Agent: agent-hub/others/email-sender-dotdigital-agent.md
+          - Brand DNA Agent: agent-hub/others/brand-dna-agent.md
+          - PageSpeed and Web Vitals Agent: agent-hub/others/page-speed-web-vitals-agent.md
+          - Google Analytics Insights: agent-hub/others/google-analytics-insights.md
+          - Google Ads Performance Agent: agent-hub/others/google-ads-performance-agent.md
+          - Seasonal Events Agent: agent-hub/others/seasonal-events-agent.md
+
+      - Agent Builder: agent-hub/agent-builder.md
+      - Vortex Memory: agent-hub/vortex-memory.md
+      
+  - Vortex Apps:
+      - List: vortex-apps/index.md
+      - API: api/api-reference.md
+      - StagingPro BigCommerce:
+          - Welcome: vortex-apps/stagingpro-bigcommerce/index.md
+          - Onboarding: vortex-apps/stagingpro-bigcommerce/stagingpro-onboarding/index.md
+          - Quick Setup: vortex-apps/stagingpro-bigcommerce/stagingpro-onboarding/stagingpro-quick-setup.md
+          - Data Dependencies: vortex-apps/stagingpro-bigcommerce/stagingpro-onboarding/stagingpro-data-dependencies.md
+          - App Pages:
+              - Home Page: vortex-apps/stagingpro-bigcommerce/understanding-the-homepage.md
+              - Bulk Content Migration: vortex-apps/stagingpro-bigcommerce/understanding-bulk-content-migration.md
+              - Selective Content Migration: vortex-apps/stagingpro-bigcommerce/selective-content-migration/index.md
+              - Selective Product Migration: vortex-apps/stagingpro-bigcommerce/selective-content-migration/selective-product-migration/index.md
+              - Pages and Layouts: vortex-apps/stagingpro-bigcommerce/selective-content-migration/pages&layouts.md
+              - History and Rollback: vortex-apps/stagingpro-bigcommerce/understanding-history-and-rollback.md
+              - Settings: vortex-apps/stagingpro-bigcommerce/understanding-settings.md
+              - Setup:
+                  - Email Notifications: vortex-apps/stagingpro-bigcommerce/stagingpro-setup-email.md
+                  - Teams Notifications: vortex-apps/stagingpro-bigcommerce/stagingpro-setup-teams.md
+                  - Slack Notifications: vortex-apps/stagingpro-bigcommerce/stagingpro-setup-slack.md 
+                  - GitHub Integration: vortex-apps/stagingpro-bigcommerce/stagingpro-github-account-setup.md
+                  - Deployment Workflow: vortex-apps/stagingpro-bigcommerce/stagingpro-github-deployment-workflow.md
+                  - Bitbucket Integration: vortex-apps/stagingpro-bigcommerce/stagingpro-bitbucket-integration.md
+          - B2B / Bundle Support: vortex-apps/stagingpro-bigcommerce/stagingpro-bundle-b2b-support.md
+          - Scheduling: vortex-apps/stagingpro-bigcommerce/stagingpro-scheduling.md
+          - Features & Benefits: vortex-apps/stagingpro-bigcommerce/stagingpro-features-benefits.md
+          - Setup: vortex-apps/stagingpro-bigcommerce/stagingpro-setup.md
+          - FAQs: vortex-apps/stagingpro-bigcommerce/stagingpro-faqs.md
+          - Coupons & Promotions: vortex-apps/stagingpro-bigcommerce/stagingpro-coupons-promotions.md
+          - How-To Topics: vortex-apps/stagingpro-bigcommerce/stagingpro-how-to-topics.md
+          - Known Issues: vortex-apps/stagingpro-bigcommerce/stagingpro-data-migration-known-issues.md
+          - Product Releases: vortex-apps/stagingpro-bigcommerce/stagingpro-product-releases.md
+          - Roadmap: vortex-apps/stagingpro-bigcommerce/stagingpro-roadmap.md
+          - Pricing: https://www.vortexiq.ai/pricing
+          
+      - Backup BigCommerce:
+          - Welcome: vortex-apps/backup-bigcommerce/index.md
+          - Onboarding: vortex-apps/backup-bigcommerce/viq-backup-onboarding.md
+          - App Pages:
+              - Dashboard: vortex-apps/backup-bigcommerce/understanding-the-dashboard.md
+              - Restore Center: vortex-apps/backup-bigcommerce/understanding-restore-center.md
+              - Change Logs: vortex-apps/backup-bigcommerce/understanding-change-logs.md
+              - Settings: vortex-apps/backup-bigcommerce/understanding-settings.md
+          - Features & Benefits: vortex-apps/backup-bigcommerce/viq-backup-features-and-benefits.md
+          - What We Backup: vortex-apps/backup-bigcommerce/what-we-backup.md
+          - Setup: vortex-apps/backup-bigcommerce/viq-backup-setup.md
+          - FAQs: vortex-apps/backup-bigcommerce/viq-backup-faqs.md
+          - How-To Topics: vortex-apps/backup-bigcommerce/viq-backup-how-to-topics.md
+          - Known Issues: vortex-apps/backup-bigcommerce/viq-backup-known-issues.md
+          - Product Releases: vortex-apps/backup-bigcommerce/viq-backup-product-releases.md
+          - Roadmap: vortex-apps/backup-bigcommerce/viq-backup-roadmap.md
+          - Pricing: https://www.vortexiq.ai/pricing
+      
+      - Staging Shopify:
+          - Welcome: vortex-apps/staging-shopify/index.md    
+          - Onboarding: vortex-apps/staging-shopify/staging-onboarding/index.md
+          - App Pages:
+              - Home Page: vortex-apps/staging-shopify/understanding-the-home-page.md
+              - Bulk Content Migration: vortex-apps/staging-shopify/understanding-bulk-content-migration.md
+              - Theme Deployments: vortex-apps/staging-shopify/understanding-theme-deployments.md
+              - Migration History: vortex-apps/staging-shopify/understanding-migration-history.md
+              - Settings:
+                  - Understanding Settings: vortex-apps/staging-shopify/understanding-settings.md
+                  - Setup Email Notifications: vortex-apps/staging-shopify/staging-setup-email.md
+                  - Setup Teams Notifications: vortex-apps/staging-shopify/staging-setup-teams.md
+                  - Setup Slack Notifications: vortex-apps/staging-shopify/staging-setup-slack.md 
+          - Features & Benefits: vortex-apps/staging-shopify/staging-features-benefits.md
+          - What We Migrate: vortex-apps/staging-shopify/what-we-migrate.md
+          - Setup: vortex-apps/staging-shopify/staging-setup.md
+          - FAQs: vortex-apps/staging-shopify/staging-faqs.md
+          - How-To Topics: vortex-apps/staging-shopify/staging-how-to-topics.md
+          - Known Issues: vortex-apps/staging-shopify/staging-data-migration-known-issues.md
+          - Product Releases: vortex-apps/staging-shopify/staging-product-releases.md
+          - Roadmap: vortex-apps/staging-shopify/staging-roadmap.md
+          - Pricing: https://www.vortexiq.ai/pricing            
+
+      - Backup Shopify: 
+          - Welcome: vortex-apps/backup-shopify/index.md
+          - Onboarding: vortex-apps/backup-shopify/backup-onboarding.md
+          - App Pages:
+              - Dashboard: vortex-apps/backup-shopify/understanding-the-dashboard.md
+              - Restore Center: vortex-apps/backup-shopify/understanding-restore-center.md
+              - Change Logs: vortex-apps/backup-shopify/understanding-change-logs.md
+              - Settings: vortex-apps/backup-shopify/understanding-settings.md
+          - Features & Benefits: vortex-apps/backup-shopify/backup-features-and-benefits.md
+          - What We Backup & Rollback: vortex-apps/backup-shopify/what-we-backup-and-rollback.md
+          - Setup: vortex-apps/backup-shopify/backup-setup.md
+          - FAQs: vortex-apps/backup-shopify/backup-faqs.md
+          - How-To Topics: vortex-apps/backup-shopify/backup-how-to-topics.md
+          - Known Issues: vortex-apps/backup-shopify/backup-known-issues.md
+          - Product Releases: vortex-apps/backup-shopify/backup-product-releases.md
+          - Roadmap: vortex-apps/backup-shopify/backup-roadmap.md
+          - Pricing: https://www.vortexiq.ai/pricing           
+              
+  - Operations:
+      - System Status: ops/system-status.md
+      - Release Notes: ops/release-notes.md
+
+  - Help and Support:
+      - Getting Started: getting-started.md
+      - Configuration: configuration.md
+      - Billing: billing.md
+      - Contact Support: support-community.md
+  
+
+  

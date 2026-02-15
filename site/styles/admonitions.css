@@ -1,0 +1,70 @@
+/* FORCE IMPORTANT — red */
+.md-typeset .admonition.important {
+    --md-admonition-bg-color: #ffebee !important;
+    border-color: #d32f2f !important;
+}
+
+.md-typeset .admonition.important .admonition-title svg {
+    color: #d32f2f !important;
+    fill: #d32f2f !important;
+}
+
+/* FORCE NOTE — purple
+.md-typeset .admonition.note {
+    --md-admonition-bg-color: #8e24aa !important;
+    border-left-color: #8e24aa !important;
+}
+
+.md-typeset .admonition.note .admonition-title svg {
+    color: #8e24aa !important;
+    fill: #8e24aa !important;
+} */
+
+
+/* Change WARNING color */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+    border-left-color: #F5A623;
+    background-color: #FFF7E6;
+}
+
+/* Change DANGER color */
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+    border-left-color: #C00;
+    background-color: #FFEBEB;
+}
+/* Example: change IMPORTANT icon */
+.md-typeset .admonition.important .admonition-title::before {
+    content: "❗"; /* any emoji or text */
+}
+
+/* Change NOTE icon */
+.md-typeset .admonition.note .admonition-title::before {
+    content: "📝";
+}
+
+/* Change WARNING icon */
+.md-typeset .admonition.warning .admonition-title::before {
+    content: "⚠️";
+}
+/* Admonitions (Warnings/Success) */
+.md-typeset .admonition.warning { border-left-color: #f97316; }
+.md-typeset .warning > .admonition-title {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: #9a3412;
+}
+.md-typeset .admonition.success { border-left-color: #10b981; }
+.md-typeset .success > .admonition-title {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #065f46;
+}
+
+/* Custom styling for the Warning/Permission box in MkDocs */
+.md-typeset .admonition.warning {
+    border-left-color: #f97316; /* Orange */
+}
+.md-typeset .warning > .admonition-title {
+    background-color: rgba(249, 115, 22, 0.1);
+    color: #9a3412;
+}

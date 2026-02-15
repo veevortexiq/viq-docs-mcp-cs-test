@@ -1,0 +1,121 @@
+<style>
+/* Core layout */
+.support-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  background: radial-gradient(circle at top, #0e1730, #070b18);
+  padding: 32px;
+  border-radius: 16px;
+  color: #e9ecf5;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Cards */
+.support-card {
+  background: linear-gradient(180deg, #101a36, #0b1227);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* Headings */
+.support-card h2,
+.support-card h3 {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+/* Form grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  background: #1a2440;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+label {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.required::after {
+  content: " *";
+  color: #ff6b6b;
+}
+
+/* Actions */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #8b6cff, #6f8cff);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Sidebar boxes */
+.info-box {
+  background: #0f1833;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.info-box ul {
+  padding-left: 18px;
+}
+
+.info-box li {
+  margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .support-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

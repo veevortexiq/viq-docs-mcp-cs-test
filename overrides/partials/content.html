@@ -1,0 +1,34 @@
+{% include "partials/tags.html" %}
+{% include "partials/actions.html" %}
+
+{% set hide_path = page.meta.hide if page and page.meta and page.meta.hide else [] %}
+{% if page and not page.is_homepage and "path" not in hide_path %}
+  <nav class="md-path" aria-label="Breadcrumbs">
+    <ol class="md-path__list">
+      <li class="md-path__item">
+        <a href="{{ nav.homepage.url | url }}">Home</a>
+      </li>
+      {% for ancestor in page.ancestors | d([]) | reverse %}
+        {% set target = ancestor if ancestor.url else (ancestor.children | selectattr("url") | first) %}
+        <li class="md-path__item">
+          {% if target and target.url %}
+            <a href="{{ target.url | url }}">{{ ancestor.title }}</a>
+          {% else %}
+            <span>{{ ancestor.title }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+      <li class="md-path__item">
+        <span>{{ page.title }}</span>
+      </li>
+    </ol>
+  </nav>
+{% endif %}
+
+{% if "\u003ch1" not in page.content %}
+  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+{% endif %}
+{{ page.content }}
+{% include "partials/source-file.html" %}
+{% include "partials/feedback.html" %}
+{% include "partials/comments.html" %}

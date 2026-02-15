@@ -1,0 +1,1438 @@
+/* docs/styles/extra.css */
+
+/* ==========================================================================
+   1. FONTS & VARIABLES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+html{
+
+    font-size: 125%;
+}
+
+/* ==============================================
+   1. GLOBAL VARIABLES & THEME OVERRIDES
+   ============================================== */
+:root {
+    /* Brand Style Guide Colors */
+    --primary: #5529D6;
+    /* Main Brand */
+    --on-primary: #FFFFFF;
+    /* Text on Primary */
+    --bg: #FFFFFF;
+    /* Page Background */
+    --text: #2F3640;
+    /* Body Text */
+
+    /* Extended */
+    --primary-dark: #3F1FB0;
+    /* Hover/Active */
+    --primary-light: #7B5BE6;
+    /* Subtle Accents */
+    --accent: #004CB2;
+    /* Complementary Blue */
+    --soft-accent: #99CCFF;
+    /* Soft Decorative */
+
+    /* Neutrals */
+    --heading: #0F1220;
+    --text-secondary: #8E9DAA;
+    --border: #E6E9EF;
+    --surface: #F7F9FC;
+    --inverse-surface: #2F3640;
+
+    /* Semantic */
+    --success: #18A957;
+    --warning: #F5A524;
+    --error: #D64545;
+    --info: #3B82F6;
+
+    /* MkDocs Theme Overrides */
+    --md-primary-fg-color: #5529D6 !important;
+    /* Force Purple Header */
+    --md-primary-bg-color: #ffffff;
+    --md-text-color: #2F3640;
+    --md-sidebar-width: 30rem;
+}
+
+/* ==============================================
+   EXPLICIT HEADER OVERRIDE (High Specificity)
+   ============================================== */
+.md-header {
+    background-color: #5529D6 !important;
+}
+
+.md-header[data-md-state="shadow"] {
+    background-color: #5529D6 !important;
+}
+
+.md-tabs {
+    background-color: #5529D6 !important;
+}
+
+/* ==============================================
+   REFINED FOOTER STYLING
+   ============================================== */
+.md-footer {
+    background-color: #2F3640 !important;
+    /* Inverse Surface from Brand Guide */
+    color: #FFFFFF !important;
+    padding: 2rem 0;
+}
+
+.md-footer__inner {
+    max-width: 1100px !important;
+    /* Constrain width to 1100px as per brand guide wrap */
+    margin: 0 auto !important;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.md-footer-meta {
+    background-color: transparent !important;
+    color: #FFFFFF !important;
+}
+
+.md-footer-meta__inner {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    padding: 0 1rem;
+}
+
+.md-copyright,
+.md-footer-meta__inner a,
+.md-footer-meta__inner span,
+.md-footer .footer-center,
+.md-footer .footer-right {
+    color: #FFFFFF !important;
+    /* Force visibility */
+    opacity: 1 !important;
+}
+
+.md-copyright {
+    margin-right: 2rem;
+}
+
+.md-footer-meta__inner a:hover {
+    text-decoration: underline;
+}
+
+.md-footer .footer-center a {
+    font-weight: 400 !important;
+    text-decoration: underline;
+    color: #FFFFFF !important;
+}
+
+
+/* Force Navy Headers Globally & Typography Updates */
+.md-typeset h1 {
+    font-size: 36px !important;
+    font-weight: 850;
+    letter-spacing: -0.04em;
+    color: #000000 !important;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    margin-top: 20px;
+}
+
+.md-typeset h2 {
+    font-size: 26px !important;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0f172a !important;
+    margin-top: 64px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+}
+
+.md-typeset h3 {
+    font-size: 18px !important;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    color: #1e293b !important;
+}
+
+.md-typeset,
+.md-typeset p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px !important;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.md-typeset strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+
+
+/* ==============================================
+   3. SETTINGS MENU STYLES (New Dashboard Look)
+   ============================================== */
+
+/* Grid for Settings Pages (Account, Sources, etc.) */
+.account-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.type-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1.5rem;
+    background: #f8fafc;
+    color: #475569;
+}
+
+.type-card strong {
+    display: block;
+    color: #0f172a;
+    font-size: 1.0rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Connector Cards (Connected Sources) */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.connector-initials {
+    width: 40px;
+    height: 40px;
+    background: #f1f5f9;
+    color: #0f172a;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.status-dot.green {
+    background-color: #10b981;
+}
+
+.status-dot.gray {
+    background-color: #cbd5e1;
+}
+
+.status-text {
+    font-size: 0.75rem;
+    color: #475569;
+    margin-left: auto;
+}
+
+.action-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3b82f6;
+    text-align: right;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* ==============================================
+   4. NAVIGATION & BUTTONS
+   ============================================== */
+
+/* Custom Round Buttons */
+.md-typeset .md-button {
+    background-color: #ffffff;
+    /* White*/
+    color: black !important;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.md-typeset .md-button:hover {
+    background-color: #5529D6 !important;
+    color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Sidebar Navigation */
+.md-nav__link {
+    transition: all 0.2s ease;
+    padding: 6px 10px;
+    white-space: normal;
+  /*  word-break: break-word;*/
+}
+
+/* Active Link (Purple Box) */
+.md-nav__link--active {
+    background-color: #efefef !important;
+    color: #5529d6 !important;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Hover on Inactive Links */
+.md-nav__link:not(.md-nav__link--active):hover {
+    color: #ffffff !important;
+    background-color: #5529D6;
+	border-radius: 8px;
+}
+
+.footer-center a {
+    font-weight: 400 !important;
+    text-decoration: underline;
+}
+
+.footer-center a:hover {
+    text-decoration: none;
+}
+
+
+/* ================================
+   Material navigation indentation
+   ================================ */
+
+/* Level 2 items (children of "Getting Started") 
+.md-nav--primary>.md-nav__list>.md-nav__item>.md-nav__list>.md-nav__item>.md-nav__link {
+    padding-left: 1.25rem;
+}
+
+/* Level 3 items (children under "Setup") 
+.md-nav--primary>.md-nav__list>.md-nav__item>.md-nav__list>.md-nav__item>.md-nav__list>.md-nav__item>.md-nav__link {
+    padding-left: 2.25rem;
+}*/
+
+/* Optional: subtle vertical guide for sub-menus */
+.md-nav__list .md-nav__list {
+    border-left: none !important;
+    margin-left: 0.5rem;
+}
+
+/* Left sidebar tree-style layout */
+.md-nav--primary .md-nav__list .md-nav__list {
+    border-left: 1px solid #e5e7eb !important;
+    margin-left: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+.md-nav--primary .md-nav__item--nested > .md-nav__list {
+    display: block;
+}
+
+.md-nav--primary .md-nav__link {
+    align-items: center !important;
+    gap: 0.4rem;
+}
+
+/* ==============================================
+   5. UTILITIES (Tables, Lists, Steps)
+   ============================================== */
+
+/* Tables */
+/* Tables - High Fidelity Round & Shadow */
+.md-typeset table:not([class]) {
+    width: 100%;
+    border-collapse: separate;
+    /* Required for border-radius */
+    border-spacing: 0;
+    margin: 32px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: table;
+    /* Overrides some MkDocs responsive wrappers if needed */
+}
+
+.md-typeset th {
+    background: #f8fafc;
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border);
+    color: #0f172a !important;
+}
+
+.md-typeset td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+}
+
+.md-typeset tr:last-child td {
+    border-bottom: none;
+}
+
+/* Admonitions / Callouts - Match Snippet */
+/* Admonitions / Callouts - High Fidelity */
+.md-typeset .admonition,
+.md-typeset div.admonition,
+.md-typeset .admonition.note,
+.md-typeset .admonition.info,
+.md-typeset .admonition.todo {
+    background-color: #f0f7ff !important;
+    /* Soft Blue */
+    border-color: #3b82f6 !important;
+    color: #1e3a8a !important;
+    border-left: 4px solid #3b82f6 !important;
+    padding: 1.5rem !important;
+    border-radius: 8px !important;
+    margin: 2rem 0 !important;
+    box-shadow: none !important;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset .admonition.attention,
+.md-typeset .admonition.caution,
+.md-typeset .admonition.danger {
+    background-color: #fffbeb !important;
+    /* Soft Amber */
+    border-color: #f59e0b !important;
+    color: #92400e !important;
+    border-left: 4px solid #f59e0b !important;
+}
+
+.md-typeset .admonition-title {
+    background-color: transparent !important;
+    border: none !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+    padding: 0 !important;
+    display: block !important;
+}
+
+/* Hide Icons to prevent overlap and match brand guide */
+.md-typeset .admonition-title::before,
+.md-typeset .admonition-title svg {
+    content: none !important;
+    display: none !important;
+}
+
+
+
+/* Code Blocks - High Fidelity */
+.md-typeset pre,
+.md-typeset .highlight,
+.md-typeset .codehilite,
+.md-typeset pre code,
+.md-typeset .highlight pre,
+.md-typeset .codehilite pre {
+    background-color: #0f172a !important;
+    /* Rich Navy */
+    color: #ffffff !important;
+    /* FORCE WHITE TEXT */
+    padding: 0 !important;
+    border-radius: 16px;
+    margin: 32px 0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.md-typeset pre code,
+.md-typeset .highlight pre,
+.md-typeset .codehilite pre {
+    background: transparent !important;
+    padding: 24px !important;
+    display: block;
+    width: 100%;
+    color: #ffffff !important;
+    /* FORCE WHITE TEXT */
+}
+
+/* Ensure syntax highlighting spans don't hide the text by being dark */
+.md-typeset .highlight span {
+    background-color: transparent !important;
+    color: inherit !important;
+    /* Ensure they inherit the white from parent */
+}
+
+
+
+.md-typeset p>code,
+.md-typeset li>code {
+    /* Inline code styling */
+    background: rgba(79, 70, 229, 0.08);
+    color: var(--primary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    word-break: break-word;
+}
+
+
+/* Step Numbers (Blue Circles) */
+.step-container ol {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+}
+
+.step-container ol li {
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-container ol li::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 2rem;
+    font-weight: 700;
+}
+
+/* ==============================================
+   STEP LIST STYLING (Blue Numbers)
+   ============================================== */
+
+/* The Container */
+.step-container {
+    background: #f8fafc;
+    /* Very light blue/gray background */
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+}
+
+/* Reset the default HTML list numbering */
+.step-container ol {
+    counter-reset: step-counter;
+    list-style: none;
+    /* Remove default 1. 2. 3. */
+    padding: 0;
+    margin: 0;
+}
+
+/* The List Item (Text Row) */
+.step-container li {
+    position: relative;
+    padding-left: 3rem;
+    /* Make room for the circle */
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    /* Clean, readable size */
+    color: #334155;
+    /* Slate dark gray */
+    line-height: 1.6;
+}
+
+/* The Blue Number (Circle) */
+.step-container li::before {
+    counter-increment: step-counter;
+    /* Count up automatically */
+    content: counter(step-counter);
+    /* Insert the number */
+
+    position: absolute;
+    left: 0;
+    top: -2px;
+    /* Slight adjustment to align with text */
+
+    width: 28px;
+    height: 28px;
+    background-color: #3b82f6;
+    /* Tech Blue */
+    color: white;
+
+    border-radius: 50%;
+    /* Make it a circle */
+    font-weight: 700;
+    font-size: 0.85rem;
+
+    /* Center the number inside the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Optional: Add a subtle shadow */
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Last item shouldn't have extra margin at bottom */
+.step-container li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ----------- Increased width             --------*/
+/* --- 1. YOUR PREFERRED SETTINGS (Keep these) --- */
+:root {
+    /* Sets the sidebar width */
+    --md-sidebar-width: 30rem !important;
+}
+
+@media screen and (min-width: 76.25em) {
+
+    /* Sets the main window width */
+    .md-grid {
+        max-width: 95vw !important;
+    }
+
+    /* --- 2. THE TEXT FIX (Safe Version) --- */
+    /* This fixes the gap and wrapping WITHOUT breaking the icons */
+
+    /* Tell the list to fill the full 25rem width */
+    .md-sidebar--primary .md-nav {
+        max-width: 30rem !important;
+
+    }
+
+    /* Target the link specifically */
+    .md-nav__link {
+        /* Stop the weird "Understandin-g" hyphenation */
+        white-space: normal !important;
+
+        /* Ensure the text container fills the space */
+        width: 100% !important;
+
+        /* CRITICAL: Do NOT add 'display: block' here. 
+       Leaving it alone keeps the icon and text on the same line. */
+    }
+}
+
+
+/*************************************************************************************************************/
+
+/* Hide specific sidebar links by their file URL */
+/* The *= means "contains" */
+
+.md-nav__link[href*="dependencies"] {
+  display: none !important;
+}
+.md-nav__link[href*="scheduling"] {
+  display: none !important;
+}
+.md-nav__link[href*="coupons"] {
+  display: none !important;
+}
+.md-nav__link[href*="api"] {
+  display: none !important;
+}
+.md-nav__link[href*="migrate"] {
+  display: none !important;
+}
+.md-nav__link[href*="rolled"] {
+  display: none !important;
+}
+.md-nav__link[href*="started"] {
+  display: none !important;
+}
+.md-nav__link[href*="configuration"] {
+  display: none !important;
+}
+.md-nav__link[href*="billing"] {
+  display: none !important;
+}
+.md-nav__link[href*="community"] {
+  display: none !important;
+}
+
+/*************************************************************************************************************/
+/* 1. Make the Header White with Black Text */
+.md-header {
+    background-color: #ffffff;
+    color: #333333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+/* 2. Fix the Logo and Text colors in the white header */
+.md-header__title, .md-header__button {
+    color: #333333 !important;
+}
+
+/* 3. Style the Navigation Tabs (The "Pill" look) */
+.md-tabs {
+    background-color: #ffffff; /* White background for tabs bar */
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+
+
+/* Active Tab Styling (The Purple Pill) */
+.md-tabs__link--active, .md-tabs__link:hover {
+    background-color: #f3e5f5; /* Light purple background */
+    color: #7b1fa2; /* Dark purple text */
+    font-weight: bold;
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* 4. Center the main content max-width */
+.md-grid {
+    max-width: 1200px;
+}
+
+/* 5. Custom Card Styling (Optional: to match image exactly) */
+.md-typeset .grid.cards > ul > li {
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    transition: transform 0.2s;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+
+/************************************************************************************************/
+/************************************************************************************************/
+
+/* --- 1. HEADER STYLING (Clean White) --- */
+.md-header {
+    background-color: #ffffff;
+    color: #333333; /* Dark text for header */
+    box-shadow: none; /* Remove heavy shadow */
+    border-bottom: 1px solid #e1e4e8;
+}
+
+/* Fix Header Text Colors (Since background is now white) */
+.md-header__title, .md-header__button, .md-tabs__link {
+    color: #555555 !important;
+}
+
+/* Active Tab Styling (Purple Text) */
+.md-tabs__link--active, .md-tabs__link:hover {
+    color: #5529D6 !important; /* Vortex Purple */
+    font-weight: 700;
+}
+.md-tabs {
+    background-color: #5529D6;
+    border-bottom: 1px solid #eee;
+}
+
+/* --- 2. BREADCRUMBS (Grey Bar Look) --- */
+/* This styles the automatic breadcrumbs to look like your HTML bar */
+.md-header + .md-container .md-grid {
+    max-width: 100%;
+    padding: 0;
+}
+
+/* The Breadcrumb container */
+.md-main__inner {
+    margin-top: 0;
+}
+/* Style the generic breadcrumb area if using navigation.path */
+.md-content__inner {
+    padding-top: 0;
+}
+
+/* --- 3. LEFT NAV (The "Toned Down" Active State) --- */
+
+/* Default State */
+.md-nav__link:active {
+    color: #6a0dad;
+}
+
+/* Hover State */
+.md-nav__link:hover {
+    color: #6a0dad; /* Purple on hover */
+}
+
+/* ACTIVE STATE - Toned Down */
+/* Currently it is black. We change it to light purple bg with dark purple text */
+.md-nav__item--active > .md-nav__link {
+    background-color: #efefef !important;
+    color: #5529d5 !important;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: none !important;
+}
+
+/* Remove the black line usually on the left of active items */
+.md-nav__item--active > .md-nav__icon {
+    display: none;
+}
+
+/* --- 4. FOOTER (Keep Dark) --- */
+.md-footer {
+    background-color: #1a1a1a; /* Keep it dark */
+    color: #919192;
+}
+
+
+
+/***********************************************************************************************/
+
+
+
+/* ==========================================================================
+   3. RIGHT SIDEBAR (TOC) - PURPLE SELECTION
+   ========================================================================== */
+
+/* 1. Target the Right Sidebar Active Link Specifically */
+.md-sidebar--secondary .md-nav__link--active {
+    
+    /* Remove the default Black Line/Border */
+    box-shadow: none !important; 
+    border: none !important;
+    
+    /* Apply the Purple Look */
+    color: #ffffff !important;       /* Purple Text */
+    background-color: #5529D6 !important; /* Light Purple Bg */
+    border-radius: 8px;
+    font-weight: 400;
+    
+    /* Adjust spacing */
+    padding-left: 10px !important;
+    margin-left: -10px; /* Pull back to align */
+}
+
+/* 2. Hover State for TOC */
+.md-sidebar--secondary .md-nav__link:hover {
+    color: #ffffff !important;
+	border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   4. GENERAL GLOBAL FIXES
+   ========================================================================== */
+
+/* Force Logo to Black (If using an image) */
+.md-header__button.md-logo img, 
+.md-header__title .md-header__button img {
+    filter: brightness(0) !important;
+}
+
+/* Ensure Header Text is Dark */
+.md-header__title, .md-header__button {
+    color: #333333 !important;
+}
+
+/* Breadcrumbs (Grey Bar) Styling */
+.md-header + .md-container .md-grid {
+    max-width: 100%;
+    padding: 0;
+}
+.md-typeset nav.md-path {
+    background: #f8f9fa;
+    padding: 10px 40px;
+    border-bottom: 1px solid #eee;
+    color: #888;
+    margin: 0;
+}
+/* ==========================================================================
+   2. AUTOMATIC BREADCRUMBS (Grey Bar Styling)
+   ========================================================================== */
+
+/* This targets the container immediately following the header */
+.md-header + .md-container .md-main .md-grid {
+    max-width: 100%;
+    padding: 0;
+    margin: auto;
+}
+
+/* Style the breadcrumb navigation strip */
+.md-typeset nav.md-path {
+    background: #f8f9fa; /* The grey background color */
+    padding: 0;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+    max-width: 100%;
+    color: #888;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.md-typeset nav.md-path a {
+    color: #888;
+}
+
+.md-typeset nav.md-path li:last-child a,
+.md-typeset nav.md-path li:last-child span {
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Breadcrumb layout fix */
+.md-path__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+}
+
+.md-path__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.md-path__item + .md-path__item::before {
+    content: "›";
+    color: #b0b0b0;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+}
+
+[dir=ltr] .md-typeset ol li,
+[dir=ltr] .md-typeset ul li {
+    margin-left: 0;
+}
+
+[dir=ltr] .md-typeset ol,
+[dir=ltr] .md-typeset ul {
+    margin-left: 0.75rem;
+}
+
+.md-typeset blockquote,
+.md-typeset dl,
+.md-typeset figure,
+.md-typeset ol,
+.md-typeset pre,
+.md-typeset ul {
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+.md-typeset ul ul,
+.md-typeset ol ol,
+.md-typeset ul ol,
+.md-typeset ol ul {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding-left: 1.5rem;
+}
+.md-typeset h2 + ul,
+.md-typeset h3 + ul,
+.md-typeset h2 + ol,
+.md-typeset h3 + ol {
+  margin-top: 0.75rem;
+}
+
+
+@media screen and (max-width: 76.1875em) {
+    .md-typeset ol,
+    .md-typeset ul {
+        padding: inherit;
+    }
+}
+
+/* Hide logo/title block in left nav */
+.md-nav__title {
+    display: none !important;
+}
+
+/* Mobile: hide the section submenu in the drawer */
+@media screen and (max-width: 76.1875em) {
+    .md-nav--primary .md-nav__item--active > .md-nav__list {
+        display: none !important;
+    }
+}
+
+
+/************************************************************************************************/
+/************************************************************************************************/
+
+/* ==========================================================================
+   FORCE SINGLE ROW HEADER (Robust Version)
+   ========================================================================== */
+
+/* Only apply on Desktop */
+@media screen and (min-width: 76.25em) {
+
+    /* 1. Header Background (White & Clean) */
+    .md-header {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        box-shadow: 0 1px 0 #e1e4e8 !important;
+        z-index: 10 !important;
+    }
+
+    /* 2. Tabs Container - The Fix */
+    .md-tabs {
+        position: fixed !important;
+        top: 0 !important;
+        height: 48px !important;
+        
+        /* LEFT ANCHOR: Push it past the logo */
+        left: 270px !important;  
+        
+        /* RIGHT ANCHOR: Stop it before the search bar (approx 350px from right) */
+        right: 350px !important; 
+        
+        width: auto !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        
+        /* VISIBILITY SETTINGS */
+        z-index: 5 !important; /* Keep below logo/search */
+        visibility: visible !important;
+        opacity: 1 !important;
+        
+        /* ALIGNMENT: Left Align */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important; /* Start from the left */
+        
+        overflow: hidden !important;
+        pointer-events: none; /* Let clicks pass through empty space */
+    }
+
+    /* 3. The Menu List */
+    .md-tabs__list {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 2px !important; /* Tiny gap between buttons */
+        pointer-events: auto; /* Enable clicking */
+    }
+
+    /* 4. The Menu Links (Text) */
+    .md-tabs__link {
+        color: #555555 !important;    /* FORCE DARK GREY */
+        font-size: 0.8rem !important; /* Compact Size */
+        font-weight: 600 !important;
+        
+        padding: 5px 12px !important; /* Pill Padding */
+        border-radius: 50px;
+        margin: 0 !important;
+        
+        display: block !important;
+        opacity: 1 !important;
+    }
+
+    /* 5. Active & Hover State (Purple Pill) */
+/* ==============================================
+   FIX: FORCE ACTIVE TAB HIGHLIGHTING
+   ============================================== */
+
+/* Target both the active item wrapper AND the link itself */
+.md-tabs__item--active .md-tabs__link, 
+.md-tabs__link--active {
+    
+    /* 1. Visual Style (Purple Pill) */
+    color: #5529d6 !important;
+    background-color: transparent !important;
+    
+    /* 2. Text Pop */
+    font-weight: 700 !important;       /* Make it Bold */
+    opacity: 1 !important;             /* Force full visibility (removes fading) */
+    
+    /* 3. Shape */
+    border-radius: 50px !important;    /* Rounded Pill shape */
+    text-decoration: underline !important;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+}
+
+/* Keep logo + search above the tabs layer (desktop) */
+@media screen and (min-width: 76.25em) {
+    .md-header__inner,
+    .md-header__title,
+    .md-header__button,
+    .md-search {
+        position: relative;
+        z-index: 20 !important;
+    }
+}
+
+/* Optional: Ensure inactive tabs are visible but distinct */
+.md-tabs__link {
+    opacity: 0.7; /* Slight fade for inactive tabs */
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+.md-tabs__link:hover {
+    opacity: 1;
+    background-color: #5529D6; /* Light grey on hover */
+    color: #5529D6; /* Purple text on hover */
+}
+}
+
+/* ==========================================================================
+   FIX: HIDE PAGE TITLE IN HEADER (Prevents overlap on scroll)
+   ========================================================================== */
+
+/* This hides the second "topic" (Page Name) in the header */
+.md-header__title .md-header__topic + .md-header__topic {
+    display: none !important;
+}
+
+/* Optional: Ensure the main Site Title stays visible and stable */
+.md-header__title {
+    opacity: 1 !important;
+    transform: none !important; /* Stops it from sliding */
+}
+
+
+/* ==========================================================================
+   FIX: HEADER TITLE & LOGO SPACING
+   ========================================================================== */
+
+/* 1. STOP TEXT FROM DISAPPEARING ON SCROLL */
+/* This forces the main "Site Title" to stay 100% visible always */
+.md-header__title .md-header__topic:first-child {
+    opacity: 1 !important;
+    transform: none !important; /* Stops the sliding animation */
+    transition: none !important;
+    display: block !important;
+}
+
+/* 2. HIDE THE PAGE TITLE (Which usually appears on scroll) */
+.md-header__title .md-header__topic + .md-header__topic {
+    display: none !important;
+}
+
+/* 3. MOVE TEXT CLOSER TO LOGO */
+.md-header__title {
+    /* Default is usually around 2rem (20px). We shrink it to 10px */
+    margin-left: 10px !important; 
+}
+
+
+
+
+
+
+
+
+/* 4. Fix Search Bar Overlap (Keep it compact) */
+.md-search__inner {
+    max-width: 100% !important;
+    width: 100%;
+    background-color: #f8f9fa !important; /* Light grey box */
+    border: 1px solid #e1e4e8 !important;
+    border-radius: 4px;
+}
+.md-search--active .md-search__inner {
+    max-width: 100% !important; /* Allow expansion when active */
+    width: 100% !important;
+}
+@media screen and (min-width: 76.25em) {
+    .md-search__inner {
+        max-width: 32rem !important;
+    }
+
+    .md-search__output {
+        max-width: min(90vw, 36rem) !important;
+    }
+}
+
+/* Search results: avoid cropping and allow full text */
+.md-search__output {
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.md-search__scrollwrap {
+    max-height: none !important;
+    overflow: visible !important;
+    width: auto !important;
+}
+
+.md-search-result__article,
+.md-search-result__article h1,
+.md-search-result__article h2,
+.md-search-result__article p,
+.md-search-result__article .md-search-result__teaser,
+.md-search-result__article .md-search-result__title,
+.md-search-result__article .md-search-result__more {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    word-break: break-word;
+}
+/* Ensure Search sits ON TOP of the menu */
+.md-search {
+    z-index: 100 !important; 
+}
+
+
+/* ==========================================================================
+   MOBILE & TABLET HEADER FIX (White Background)
+   ========================================================================== */
+@media screen and (max-width: 76.15em) {
+    
+    /* 1. Force Header Background to White */
+    .md-header {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        box-shadow: 0 1px 0 #e1e4e8 !important;
+    }
+
+    /* 2. Force Icons (Menu, Search, Back) to Dark Grey */
+    .md-header__button, 
+    .md-header__icon {
+        color: #333333 !important;
+    }
+
+    /* 3. Force Site Title to Dark Grey */
+    .md-header__title {
+        color: #333333 !important;
+        font-weight: 600 !important;
+    }
+
+    /* 4. Force Logo to Black (Invert colors if your logo is white) */
+    .md-header__button.md-logo img {
+        filter: brightness(0) !important;
+    }
+    
+    /* 5. Mobile Search Bar Styling */
+    /* Makes the search box light grey so it stands out on the white header */
+    .md-search__input {
+        background-color: #f0f2f5 !important; 
+        color: #333333 !important;
+        border: 1px solid #e1e4e8 !important;
+    }
+    
+    /* Fix the 'back arrow' inside search when active */
+    .md-search__icon {
+        color: #666666 !important;
+    }
+}
+
+/********************************************************************************************************************/
+
+/* Fix Giant Search Results */
+.md-search-result__article h1,
+.md-search-result__article h2 {
+    font-size: 1.1rem !important; /* Resets header size in search */
+    line-height: 1.2 !important;
+    margin-bottom: 0.2rem !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: 700;
+}
+
+.md-search-result__article {
+    padding: 10px !important; /* Reduces whitespace */
+}
+
+.md-search-result__icon {
+    color: var(--md-default-fg-color--light);
+    height: 1.2rem;
+    margin: 0;
+    position: relative;
+    width: 1.2rem;
+}
+
+
+/* Center Align Tabs */
+@media screen and (min-width: 76.25em) {
+    .md-tabs {
+        /* Reset the hard-coded positions from your previous CSS */
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        
+        /* Flex centering */
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        padding-left: 1.5rem !important;
+        margin-top: 10px !important;
+        border-top: 1px solid #00000012 !important;
+        background: #ededed !important;
+    }
+
+    .md-tabs .md-grid {
+        margin-left: 0 !important;
+    }
+
+    .md-tabs__list {
+        /* Ensure the list inside is also centered */
+        display: flex !important;
+        justify-content: flex-start !important;
+        margin: 0 !important;
+        width: auto !important;
+    }
+
+    .md-tabs__inner {
+        justify-content: flex-start !important;
+    }
+}
+
+/* ==========================================================================
+   NAV TABS CLICK/FLOW FIX
+   ========================================================================== */
+@media screen and (min-width: 76.25em) {
+    .md-tabs {
+        position: static !important;
+        pointer-events: auto !important;
+        z-index: 30 !important;
+    }
+
+    .md-tabs__list,
+    .md-tabs__item,
+    .md-tabs__link {
+        pointer-events: auto !important;
+    }
+}
+
+.md-tabs__item {
+    height: auto;
+}
+
+/* Hide theme toggle (Switch to dark mode) */
+.md-header__button[for^="__palette"] {
+    display: none !important;
+}
+
+
+
+
+
+
+/********************************************************************************************************************/
+
+
+
+/* ==============================================
+   FIX: WIDER SIDEBAR & WRAPPING TEXT
+   ============================================== */
+
+/* 1. INCREASE SIDEBAR WIDTH */
+:root {
+    /* Standard is ~12rem. We bump it to ~19rem (approx 300px) */
+    --md-sidebar-width: 300px; 
+}
+
+/* 2. ALLOW TEXT TO WRAP (Multi-line) */
+.md-nav__link .md-ellipsis {
+    white-space: normal !important;  /* Allow wrapping */
+    text-overflow: clip !important;  /* Remove dots (...) */
+    overflow: visible !important;    /* Show all text */
+    width: 100% !important;          /* Fill the space */
+    line-height: 1.4 !important;     /* Better readability */
+}
+@media screen and (max-width: 76.1875em) {
+    .md-nav__link .md-ellipsis {
+        font-size: 16px;
+    }
+}
+/* 3. ADJUST BUTTON CONTAINER HEIGHT */
+.md-nav__link {
+    height: auto !important;
+    min-height: 20px !important;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    align-items: flex-start !important;
+}
+
+/* 4. FIX ARROW ICON POSITION */
+.md-nav__icon {
+    /* Push the arrow down slightly to align with the first line of text */
+    margin-top: 3px !important; 
+}
+.md-nav__link .md-ellipsis {
+    position: relative;
+    font-size: 13px;
+}
+
+
+@media screen and (min-width: 76.25em) {
+    .md-sidebar--primary .md-nav {
+        width: 11rem;
+    }
+    .md-sidebar {
+        width: 16.1rem;
+    }
+    .md-nav__toggle~.md-nav {
+        width: 100% !important;
+    }
+    .md-nav--primary .md-nav__list .md-nav__list {
+        width: 100%;
+    }
+
+
+}
+
+/* ==========================================================================
+   FIX: HARD-LOCK SIDEBAR (Absolute Pixels)
+   ========================================================================== */
+
+/* 1. LOCK THE SIDEBAR WIDTH (Using Pixels) */
+/* We use 'px' instead of 'rem' so it ignores the 125% font scaling. 
+   300px is a standard, safe width. */
+.md-sidebar--primary {
+    width: 280px !important;
+    min-width: 280px !important; /* The Concrete Wall: Cannot shrink below this */
+    flex-shrink: 0 !important;   /* Prevents squashing when center is empty */
+    display: block !important;
+}
+
+/* 2. PREVENT THE "MOVING CENTER" BUG */
+/* Ensures the main content area respects the sidebar's space */
+.md-main__inner {
+    margin-left: 0 !important; /* Reset margins to let flexbox work */
+    gap: 30px !important;      /* Gap between sidebar and content */
+}
+
+
+
+
+/* Custom breadcrumb font size */
+.md-content .md-path {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Breadcrumb links */
+.md-content .md-path a,
+.md-content .md-path span {
+  font-size: 0.75rem;
+}
+.md-content .md-path {
+  color: rgba(0, 0, 0, 0.55);
+}
+.md-path__list {
+  padding: 0.25rem 0;
+}
+
+.md-path__item--active span {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}

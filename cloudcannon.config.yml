@@ -1,0 +1,40 @@
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  docs:
+    path: docs
+    icon: docs
+    disable_url: false
+    _enabled_editors:
+      - content
+      - visual
+      - data
+    add_options:
+      - name: Add Doc
+        ext: md
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  overrides:
+    path: overrides
+    icon: overview
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  site:
+    path: site
+    icon: gite
+    disable_url: false
+    disable_add: true
+    disable_add_folder: false
+    disable_file_actions: false
+_inputs:
+  $.nav:
+    cascade: true
+timezone: Etc/UTC

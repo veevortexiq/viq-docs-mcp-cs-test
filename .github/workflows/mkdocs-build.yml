@@ -1,0 +1,45 @@
+name: Build MkDocs site
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - ".github/workflows/mkdocs-build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          #pip install mkdocs
+          pip install -r requirements.txt
+          # If you use mkdocs-material or plugins, add them here:
+          # pip install mkdocs-material mkdocs-awesome-pages-plugin
+
+      - name: Build site
+        run: |
+          mkdocs build --clean --site-dir site
+
+      - name: Commit generated site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site
+          git commit -m "chore: rebuild mkdocs site" || echo "No changes to commit"
+          git push

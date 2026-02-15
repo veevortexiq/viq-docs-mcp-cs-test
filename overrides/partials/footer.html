@@ -1,0 +1,40 @@
+<footer class="md-footer custom-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid footer-flex">
+
+      <div class="footer-left">
+        © <span id="current-year"></span> Vortex IQ. All Rights Reserved.
+      </div>
+
+      <div class="footer-center">
+        <a href="https://www.vortexiq.ai/trust/privacy-policy">Privacy Policy</a>
+        <span class="footer-separator">|</span>
+        <a href="https://www.vortexiq.ai/trust/terms-of-service">Terms of Service</a>
+        <span class="footer-separator">|</span>
+<!--        <a href="https://www.vortexiq.ai/trust/cookie-policy">Cookie Policy</a>
+        <span class="footer-separator">|</span> -->
+        <a href="/ops/contact-support-form.html">Contact Support</a>
+      </div>
+
+<!--      <div class="footer-right">
+        Powered by <a href="https://www.vortexiq.ai/" class="footer-link">Vortex IQ</a>
+      </div> -->
+
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  document.getElementById("current-year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5LM3LFL3QL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5LM3LFL3QL');
+</script>
