@@ -5155,11 +5155,11 @@ Schema Target: HowTo / TechArticle
 -->
 
 <h1 id="connecting-data-sources-configuring-your-workspace">Connecting Data Sources &amp; Configuring Your Workspace</h1>
-<p><strong>Vortex IQ becomes your AI Operating System the moment you connect your first data source. This guide walks you through linking your eCommerce store, marketing platforms, and team settings — all secured with industry-standard authorization and encrypted credential storage. No technical expertise required.</strong></p>
+<p><strong>Vortex IQ becomes your AI Operating System the moment you connect your first data source. This guide walks you through linking your eCommerce store, marketing platforms, and team settings — all secured with industry-standard authorisation and encrypted credential storage. No technical knowledge required.</strong></p>
 <hr />
 <h2 id="why-your-connections-are-the-foundation-of-everything">Why Your Connections Are the Foundation of Everything</h2>
-<p>Your AI agents are only as intelligent as the data they can access. When you connect Shopify, Google Analytics, and your advertising platforms, the entire Vortex IQ OS gains a real-time, unified picture of your business — enabling the Nerve Centre to detect revenue anomalies before they cost you sales, Ask Viq to answer performance questions in plain English, and Vortex Mind to surface strategic opportunities you would otherwise miss.</p>
-<p>The impact is measurable and immediate. Merchants using unified AI data platforms report an <strong>80% improvement in lead generation efficiency</strong> and a <strong>45% improvement in marketing ROI</strong> compared to those managing fragmented point tools separately (Source: <a href="https://aiautomation.cc/blog/ai-automation-in-ecommerce-2025-roi-guide">AI Automation in eCommerce: 2025 ROI Guide</a>). Beyond marketing, <strong>72% of eCommerce businesses that adopt unified AI platforms report measurable cost reductions within the first year</strong> (Source: <a href="https://ecomposer.io/blogs/ecommerce/ai-in-ecommerce-statistics">EComposer — AI in eCommerce Statistics 2025</a>). And companies that excel at data-driven personalisation through unified platforms generate <strong>40% more revenue</strong> than industry averages (Source: McKinsey &amp; Company).</p>
+<p>Your AI agents are only as powerful as the data they can see. When you connect Shopify, Google Analytics, and your advertising platforms, the entire Vortex IQ OS gains a real-time, unified picture of your business — enabling the Nerve Centre to detect revenue anomalies before they cost you sales, Ask Viq to answer performance questions in plain English, and Vortex Mind to surface strategic opportunities you would otherwise miss.</p>
+<p>The impact of this unification is measurable and immediate. Merchants using unified AI data platforms report an <strong>80% improvement in lead generation efficiency</strong> and a <strong>45% improvement in marketing ROI</strong> compared to those managing fragmented point tools separately (Source: <a href="https://aiautomation.cc/blog/ai-automation-in-ecommerce-2025-roi-guide">AI Automation in eCommerce: 2025 ROI Guide</a>). Beyond marketing, <strong>72% of eCommerce businesses that adopt unified AI platforms report measurable cost reductions within the first year</strong> (Source: <a href="https://ecomposer.io/blogs/ecommerce/ai-in-ecommerce-statistics">EComposer — AI in eCommerce Statistics 2025</a>). And companies that excel at data-driven personalisation through unified AI platforms generate <strong>40% more revenue</strong> than industry averages (Source: McKinsey &amp; Company).</p>
 <p>Connecting your sources in the first session is the single highest-leverage action you can take on the platform.</p>
 <hr />
 <h2 id="supported-platforms-connection-methods">Supported Platforms &amp; Connection Methods</h2>
@@ -5222,18 +5222,18 @@ Schema Target: HowTo / TechArticle
 <p>All platform connections use the minimum permissions necessary. Vortex IQ requests <strong>read-only</strong> access to your store and analytics data as a default. Write-level access — for example, allowing an AI agent to publish a product update — requires your explicit approval each time the action is proposed. No agent can make changes to your live store without your sign-off.</p>
 </div>
 <p>To view and manage all your connected sources, navigate to <strong>Settings → Connected Sources</strong>.</p>
-<p><img alt="Connected Sources settings page showing all platform integration cards grouped by Ecommerce, Analytics, Marketing, Finance, Communications, and Monitoring" src="../img/viq-docs/settings-connected-sources-ui.png" /></p>
+<p><img alt="Connected Sources settings page showing all platform integration cards grouped by Ecommerce, Analytics, Marketing, Finance, Communications, and Monitoring categories" src="../aios screenshots/settings connected sources.png" /></p>
 <p><em>The Connected Sources settings page, showing the full grid of available integrations grouped by category — Ecommerce, Analytics, Marketing, Finance, Communications, and Monitoring — with status indicators and connection controls for each.</em></p>
 <hr />
 <h2 id="step-by-step-connecting-your-store">Step-by-Step: Connecting Your Store</h2>
 <h3 id="connecting-shopify">Connecting Shopify</h3>
-<p>Shopify connects via OAuth 2.0 — the same secure authorization flow used by Shopify's own partner apps. You do not need to copy or paste any API keys manually.</p>
+<p>Shopify connects via OAuth 2.0 — the same secure authorisation flow used by Shopify's own partner apps. You do not need to copy or paste any API keys manually.</p>
 <ol>
 <li>Go to <strong>Settings → Connected Sources</strong> and click <strong>"Add Integration"</strong>.</li>
 <li>Select <strong>Shopify</strong> from the platform list.</li>
 <li>Choose your environment: <strong>Production</strong> (live store) or <strong>Sandbox</strong> (development/staging store).</li>
-<li>Enter your <strong>Shopify store name</strong> — the subdomain only (e.g., enter <code>my-store</code>, not <code>my-store.myshopify.com</code>).</li>
-<li>Click <strong>"Connect to Shopify"</strong> — you will be redirected to Shopify to review and authorize the connection.</li>
+<li>Enter your <strong>Shopify store name</strong> (the subdomain only — for example, enter <code>my-store</code>, not <code>my-store.myshopify.com</code>).</li>
+<li>Click <strong>"Connect to Shopify"</strong> — you will be redirected to Shopify to review and authorise the connection.</li>
 <li>Review the requested permissions and click <strong>"Install"</strong>.</li>
 <li>You are returned to Vortex IQ. Your store appears as <strong>Connected</strong> within seconds and data synchronisation begins immediately.</li>
 </ol>
@@ -5241,28 +5241,28 @@ Schema Target: HowTo / TechArticle
 
 <div class="admonition tip">
 <p class="admonition-title">What Permissions Does Vortex IQ Request?</p>
-<p>Vortex IQ requests read access to products, orders, customers, and analytics. No write permissions are requested by default. Individual AI agents — such as the Product SEO Agent — may request additional scopes when you activate them. You will always be shown exactly what access is requested before you approve.</p>
+<p>Vortex IQ requests read access to products, orders, customers, and analytics. No write permissions are requested by default. Individual AI agents — such as the Product SEO Agent — may request additional scopes when you activate them. You will always be shown exactly what access is being requested before you approve.</p>
 </div>
 <hr />
 <h3 id="connecting-bigcommerce">Connecting BigCommerce</h3>
-<p>BigCommerce uses a secure API token connection. You generate a read-only token in your BigCommerce control panel and paste it into Vortex IQ.</p>
+<p>BigCommerce uses a secure API token connection. You will generate a read-only token in your BigCommerce control panel and paste it directly into Vortex IQ.</p>
 <ol>
-<li>In your <strong>BigCommerce Admin</strong>, go to <strong>Settings → Store-level API Accounts</strong>.</li>
+<li>In your <strong>BigCommerce Admin</strong>, navigate to <strong>Settings → Store-level API Accounts</strong>.</li>
 <li>Create a new API Account with <strong>Read-Only</strong> permissions for: Products, Orders, Customers, and Analytics.</li>
-<li>Copy your <strong>Store Hash</strong> and <strong>API Access Token</strong>.</li>
+<li>Copy your <strong>Store Hash</strong> and <strong>API Access Token</strong> from the generated credentials.</li>
 <li>In Vortex IQ, go to <strong>Settings → Connected Sources → Add Integration → BigCommerce</strong>.</li>
 <li>Enter your Store Hash, paste your Access Token, and give this integration a name.</li>
-<li>Click <strong>"Verify &amp; Connect"</strong> — Vortex IQ validates the connection in real time.</li>
+<li>Click <strong>"Verify &amp; Connect"</strong> — Vortex IQ validates the connection in real time and confirms success.</li>
 </ol>
-<!-- screenshot: BigCommerce integration form with the Store Hash and Access Token input fields and the Verify & Connect button -->
+<!-- screenshot: BigCommerce integration form with the Store Hash and Access Token input fields, and the Verify & Connect button -->
 
 <div class="admonition warning">
 <p class="admonition-title">Protect Your API Token</p>
-<p>Your BigCommerce API token is encrypted before it is stored and is never displayed in plain text after saving. If you suspect a token has been compromised, revoke it immediately in your BigCommerce admin and reconnect with a fresh token.</p>
+<p>Your BigCommerce API token is encrypted before it is stored and is never displayed in plain text after saving. If you suspect a token has been compromised, revoke it immediately in your BigCommerce admin panel and reconnect with a fresh token from Vortex IQ.</p>
 </div>
 <hr />
 <h3 id="connecting-google-analytics-ga4">Connecting Google Analytics (GA4)</h3>
-<p>Google Analytics connects via OAuth 2.0 — no manual API credentials required.</p>
+<p>Google Analytics connects via OAuth 2.0 — no manual API credentials are required.</p>
 <ol>
 <li>In Vortex IQ, go to <strong>Settings → Connected Sources → Add Integration → Google Analytics</strong>.</li>
 <li>Click <strong>"Connect with Google"</strong> — you will be redirected to Google to sign in and authorise read access.</li>
@@ -5276,17 +5276,17 @@ Schema Target: HowTo / TechArticle
 <h3 id="connecting-facebook-ads">Connecting Facebook Ads</h3>
 <p>Facebook Ads connects using a manually generated system access token from your Facebook Business Manager.</p>
 <ol>
-<li>In Facebook Business Manager, go to <strong>Business Settings → System Users → Generate Token</strong>.</li>
-<li>Select <strong>Ads Read</strong> permission and copy the generated token.</li>
+<li>In Facebook Business Manager, navigate to <strong>Business Settings → System Users → Generate Token</strong>.</li>
+<li>Select <strong>Ads Read</strong> as the required permission scope and copy the generated token.</li>
 <li>In Vortex IQ, go to <strong>Settings → Connected Sources → Add Integration → Facebook Ads</strong>.</li>
-<li>Paste your system access token and enter your <strong>Ad Account ID(s)</strong> (comma-separated if managing multiple accounts).</li>
+<li>Paste your system access token and enter your <strong>Ad Account ID(s)</strong> (comma-separated if you manage multiple accounts).</li>
 <li>Click <strong>"Verify &amp; Connect"</strong>.</li>
 </ol>
-<!-- screenshot: Facebook Ads integration form with the Access Token and Ad Account IDs fields -->
+<!-- screenshot: Facebook Ads integration form with the Access Token and Ad Account IDs fields, and the Verify & Connect button -->
 
 <hr />
 <h3 id="connecting-adobe-commerce-magento">Connecting Adobe Commerce (Magento)</h3>
-<p>Adobe Commerce supports API token-based connections. The setup may require an additional step to configure your store's REST access depending on your hosting environment.</p>
+<p>Adobe Commerce supports API token-based connections. Given the variety of hosting configurations, Adobe Commerce setup may require an additional step to configure your store's REST access.</p>
 <ol>
 <li>In Vortex IQ, go to <strong>Settings → Connected Sources → Add Integration → Adobe Commerce</strong>.</li>
 <li>Follow the on-screen instructions to generate a read-only integration token in your Adobe Commerce admin panel.</li>
@@ -5295,12 +5295,12 @@ Schema Target: HowTo / TechArticle
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Need Help with Adobe Commerce?</p>
-<p>Adobe Commerce configurations can vary depending on your hosting environment. If you need assistance, contact the Vortex IQ support team — we will guide you through the setup at no additional cost.</p>
+<p>Adobe Commerce configurations can vary depending on your hosting environment. If you need assistance, contact the Vortex IQ support team — we will guide you through the connection process at no additional cost.</p>
 </div>
 <hr />
 <h2 id="managing-your-organisation-profile">Managing Your Organisation Profile</h2>
-<p>Your organisation profile controls how Vortex IQ presents your brand across AI-generated reports, scheduled alerts, and team communications.</p>
-<p><img alt="Account Details settings page showing organisation name, contact information form, and regional settings" src="../img/viq-docs/settings-account-details.png" /></p>
+<p>Your organisation profile determines how Vortex IQ presents your brand across AI-generated reports, scheduled alerts, and team communications. Keeping this accurate ensures every output feels native to your business.</p>
+<p><img alt="Account Details settings page showing organisation name, contact information form, and regional settings" src="../aios screenshots/settings-account information  account details .png" /></p>
 <p><em>The Account Information → Account Details page, where you can update your organisation name, website, contact details (phone, address, city, country), and primary contact information.</em></p>
 <p>To update your organisation profile, navigate to <strong>Settings → Account Information</strong>.</p>
 <table>
@@ -5327,24 +5327,24 @@ Schema Target: HowTo / TechArticle
 </table>
 <hr />
 <h2 id="inviting-your-team">Inviting Your Team</h2>
-<p>You can invite colleagues with pre-defined roles to control exactly what each person can see and do within Vortex IQ.</p>
-<p><img alt="Users list showing name, email, role, status, date added, and action columns with an Add User button" src="../img/viq-docs/settings-account-users.png" /></p>
-<p><em>The Users list under Settings → Account Information, showing all team members with their assigned roles, status indicators (Active, Pending, Invited Expired), and action controls. Agency stats showing total users and partnership tier are displayed at the top.</em></p>
+<p>Vortex IQ is built for collaboration. You can invite colleagues with specific roles to ensure every team member operates within appropriate boundaries — protecting both your data and your AI configuration.</p>
 <div class="admonition warning">
 <p class="admonition-title">Administrator Access Required</p>
 <p>Only users with <strong>Administrator</strong> privileges can invite new team members. If you do not see the <strong>"Add User"</strong> button, contact your workspace Administrator to request access.</p>
 </div>
 <h3 id="how-to-invite-a-team-member">How to Invite a Team Member</h3>
+<p><img alt="Users list showing name, email, role, status, date added, and actions columns with an Add User button" src="../aios screenshots/settings-account information  users.png" /></p>
+<p><em>The Users list under Settings → Account Information, showing all team members with their assigned roles, status indicators (Active, Pending, Invited Expired), and action controls. Agency stats showing total users and partnership tier are displayed at the top.</em></p>
 <ol>
 <li>Go to <strong>Settings → Account Information → Users</strong>.</li>
 <li>Click the <strong>"Add User"</strong> button.</li>
 <li>Enter the team member's professional email address.</li>
-<li>Select their <strong>Role</strong> from the dropdown.</li>
+<li>Select their <strong>Role</strong> from the dropdown (see the roles table below).</li>
 <li>Click <strong>"Send Invitation"</strong>.</li>
 </ol>
-<p><img alt="Add New User form showing email field, role selector, and Send Invitation button" src="../img/viq-docs/settings-add-new-user.png" /></p>
+<p><img alt="Add New User modal showing email field, role selector, and Send Invitation button" src="../aios screenshots/settings-account information  users add new user.png" /></p>
 <p><em>The Add New User form, where you enter the team member's email address, assign their access role, and send the invitation.</em></p>
-<p>The invited team member will appear as <strong>Pending</strong> until they accept via email. Once accepted, they have immediate access at their assigned permission level.</p>
+<p>The invited team member will appear as <strong>Pending</strong> until they accept the invitation via email. Once accepted, they have immediate access at their assigned permission level. No further setup is required.</p>
 <h3 id="team-role-permissions">Team Role Permissions</h3>
 <table>
 <thead>
@@ -5401,6 +5401,7 @@ Schema Target: HowTo / TechArticle
 </tbody>
 </table>
 <h3 id="revoking-team-access">Revoking Team Access</h3>
+<p>If a team member leaves your organisation or no longer requires access:</p>
 <ol>
 <li>Go to <strong>Settings → Account Information → Users</strong>.</li>
 <li>Find the user and click the action menu next to their name.</li>
@@ -5409,23 +5410,23 @@ Schema Target: HowTo / TechArticle
 <p>Access is revoked immediately — the user cannot sign in or view any workspace data from that moment forward.</p>
 <hr />
 <h2 id="partner-accounts-managing-multiple-client-workspaces">Partner Accounts: Managing Multiple Client Workspaces</h2>
-<p>If you are on a Partner Account — for agencies and system integrators — you have access to a <strong>multi-merchant workspace switcher</strong> to manage all your client workspaces from one login.</p>
-<p><img alt="Partner account multi-merchant workspace switcher dropdown showing a list of client workspaces" src="../img/viq-docs/web-agency-multi-merchant.png" /></p>
+<p>If you are on a Partner Account — for agencies and system integrators — you have access to a <strong>multi-merchant workspace switcher</strong> that lets you manage all your client workspaces from one login.</p>
+<p><img alt="Partner account multi-merchant workspace switcher dropdown showing a list of client workspaces" src="../aios screenshots/Web acency - multi merchant dropdown.png" /></p>
 <p><em>The multi-merchant workspace switcher available on Partner Accounts, showing a dropdown list of client workspaces with one-click switching — each workspace is fully isolated with its own data, agents, and settings.</em></p>
-<p>Each client workspace is completely isolated. Their store data, agents, reports, and settings are never visible to other clients, even within the same Partner Account.</p>
+<p>Each client workspace is completely isolated. Their store data, agents, reports, and settings are never visible to other clients, even if they share the same Partner Account. Switching workspaces takes one click from the workspace dropdown in the top navigation.</p>
 <hr />
 <h2 id="ai-safety-guardrails-how-your-connected-data-is-protected">AI Safety &amp; Guardrails: How Your Connected Data Is Protected</h2>
 <p>Every integration you create in Vortex IQ operates within a layered security framework designed to protect your business data and your customers' privacy simultaneously.</p>
 <p><strong>Encrypted Credential Storage:</strong>
-Your platform access tokens are encrypted before being saved. They are never displayed in plain text after the initial connection and are never shared with third parties.</p>
+Your platform access tokens and OAuth refresh tokens are encrypted before being saved. They are never displayed in plain text after the initial connection, and they are never shared with third parties.</p>
 <p><strong>Minimal Permission Scopes:</strong>
-Vortex IQ requests only the access scopes required for each specific operation. All core connections use read-only access. When an AI agent needs write-level access to execute a specific task — such as updating a product description — you will be prompted for explicit approval. The action does not proceed automatically.</p>
+Vortex IQ requests only the access scopes it requires for each specific operation. All core connections use read-only access. When an AI agent needs write-level access to execute a specific task — such as updating a product description — you will be prompted for explicit approval. The action does not proceed automatically.</p>
 <p><strong>Human-in-the-Loop Approval:</strong>
-Every proposed action that touches your live store data requires manual review and approval from a user with Manager or Administrator privileges. The AI works for you — it never acts unilaterally on high-impact operations.</p>
+Every proposed action that touches your live store data requires manual review and approval from a user with Manager or Administrator privileges. This "Human in the Loop" design means the AI works for you — it never acts unilaterally on high-impact operations.</p>
 <p><strong>Audit Trail Logging:</strong>
 Every connection event — added, updated, disconnected — is logged in your <a href="governance/audit-trails.md">Audit Trail</a> with a full timestamp and the identity of the user who made the change. This gives you complete accountability over your workspace configuration at all times.</p>
 <p><strong>Session Security:</strong>
-All authentication sessions are managed via Google Cloud Identity — one of the most widely audited enterprise identity platforms available. Sessions expire automatically and are re-validated on each login.</p>
+All authentication sessions are managed via Google Cloud Identity — one of the most widely audited enterprise identity platforms available. Sessions expire automatically and are re-validated on each login to prevent unauthorised access.</p>
 <div class="admonition note">
 <p class="admonition-title">GDPR &amp; CCPA Compliance</p>
 <p>Vortex IQ processes business performance signals — it does not store your customers' Personally Identifiable Information (PII). All data processing is performed in compliance with GDPR and CCPA requirements.</p>
@@ -5434,30 +5435,30 @@ All authentication sessions are managed via Google Cloud Identity — one of the
 <h2 id="troubleshooting-connected-sources">Troubleshooting Connected Sources</h2>
 <p><strong>"Connection failed" when linking Shopify:</strong>
 - Confirm your store name does not include <code>https://</code> or <code>.myshopify.com</code> — enter only the subdomain (e.g., <code>my-store</code>).
-- Ensure you are signed into the correct Shopify account before authorising.
+- Ensure you are logged into the correct Shopify account before authorising the connection.
 - Verify that your Shopify plan supports third-party app integrations.</p>
 <p><strong>"Invalid credentials" for BigCommerce:</strong>
-- Re-generate your API token in BigCommerce and confirm it has read-only scopes for Products, Orders, Customers, and Analytics.
+- Re-generate your API token in BigCommerce and ensure it has the required read-only scopes for Products, Orders, Customers, and Analytics.
 - Copy the full Access Token carefully — avoid including any leading or trailing spaces.</p>
 <p><strong>Google Analytics connected but no data appears:</strong>
-- Confirm you selected the correct GA4 property during the OAuth flow.
+- Confirm you selected the correct GA4 property during the authorisation flow.
 - GA4 data can take up to 24 hours to appear after the initial connection.</p>
 <p><strong>Data stops refreshing for any platform:</strong>
 - Navigate to <strong>Settings → Connected Sources</strong> and check the status indicator next to the affected integration.
 - Click <strong>"Refresh Connection"</strong> to force a new data synchronisation.
-- If the status shows <strong>"Error"</strong>, disconnect and reconnect the integration to re-authorise.</p>
+- If the status shows <strong>"Error"</strong>, disconnect the integration and reconnect to re-authorise with fresh credentials.</p>
 <hr />
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <p><strong>Q: Can I connect more than one store of the same platform type?</strong>
-Yes. You can connect multiple Shopify or BigCommerce stores as separate integrations, each named independently. They appear as separate data sources in the Nerve Centre and Command Centre with no cross-contamination between accounts.</p>
+Yes. You can connect multiple Shopify or BigCommerce stores as separate integrations. Each integration is named independently and appears as its own data source in the Nerve Centre and Command Centre, with no cross-contamination between accounts.</p>
 <p><strong>Q: Will connecting my store affect its loading speed or checkout performance?</strong>
-No. Vortex IQ uses read-only, scheduled data pulls at staggered intervals. There is no impact on your store's real-time performance or customer checkout experience.</p>
+No. Vortex IQ uses read-only, scheduled data pulls to retrieve store information. These calls are rate-limited and staggered to ensure there is no impact on your store's real-time performance or customer checkout experience.</p>
 <p><strong>Q: How do I disconnect a platform?</strong>
-Go to <strong>Settings → Connected Sources</strong>, locate the integration, and click <strong>"Disconnect"</strong>. Data previously pulled from that source is retained in Vortex IQ for 30 days but stops refreshing immediately.</p>
+Navigate to <strong>Settings → Connected Sources</strong>, locate the integration, and click <strong>"Disconnect"</strong>. All data previously pulled from that source is retained in Vortex IQ for 30 days but stops refreshing immediately. After 30 days, the disconnected source's data is removed from your dashboards.</p>
 <p><strong>Q: Does Vortex IQ support Adobe Commerce (Magento)?</strong>
-Yes. Adobe Commerce is a fully supported storefront connector. Contact the Vortex IQ support team if you need assistance during the setup process.</p>
+Yes. Adobe Commerce is a fully supported storefront connector. The setup process requires generating a read-only integration token in your Adobe Commerce admin. Contact the Vortex IQ support team if you need assistance during configuration.</p>
 <p><strong>Q: What happens if my OAuth token expires?</strong>
-OAuth access tokens are refreshed automatically in the background when possible. If a token cannot be silently renewed — for example, if you revoked access from Shopify's app settings — your integration will show a <strong>"Reconnect Required"</strong> status. Click the reconnect button to re-authorise in one click.</p>
+OAuth access tokens are refreshed automatically in the background whenever possible. If a token expires and cannot be silently renewed — for example, if you revoked Vortex IQ's access from Shopify's app settings — your integration will display a <strong>"Reconnect Required"</strong> status. Simply click the reconnect button to re-authorise with a single click.</p>
 <hr />
 <p><a class="md-button" href="../">← Back to Help Centre</a></p>
 
