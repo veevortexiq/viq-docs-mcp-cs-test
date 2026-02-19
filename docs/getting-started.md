@@ -18,30 +18,28 @@ Schema Target: HowTo / TechArticle
 
 ---
 
-## Why Merchants Are Making the Switch
+## Why an "Operating System" Replaces Your Disjointed Tools
 
-The average eCommerce operator today juggles a patchwork of separate tools: one for SEO, another for inventory, a third for analytics, and yet another for staging. The result is data silos, missed signals, and hours lost every week stitching reports together manually.
+The modern eCommerce stack is typically a patchwork of separate, disconnected tools — one for SEO, another for inventory, a third for analytics, and a fourth for advertising. The result is data silos, missed signals, and hours lost each week manually reconciling reports across platforms that were never designed to talk to each other.
 
-Vortex IQ was built to replace that fragmentation with a single AI-powered command center. The shift is already well underway: the global AI-enabled eCommerce market is valued at **$9.01 billion in 2025**, projected to grow to **$74.93 billion by 2035** at a 23.59% annual growth rate (Source: [Precedence Research](https://www.precedenceresearch.com/artificial-intelligence-in-e-commerce-market)). Meanwhile, **69% of retailers who have adopted AI report direct, measurable revenue increases**, and **77% of eCommerce professionals now use AI daily** (Source: [EComposer – AI in eCommerce Statistics 2025](https://ecomposer.io/blogs/ecommerce/ai-in-ecommerce-statistics)).
+Vortex IQ was built to replace that fragmentation with a single, intelligent Command Centre. The shift is already accelerating: **77% of eCommerce professionals now use AI daily**, and **95% of eCommerce brands using AI report a strong return on their investment** (Source: [EComposer — AI in eCommerce Statistics 2025](https://ecomposer.io/blogs/ecommerce/ai-in-ecommerce-statistics)). Critically, **89% of companies that implement AI personalization and automation report positive ROI, with an average payback period of just 9 months** (Source: [Envive.ai — AI Personalization Statistics 2026](https://www.envive.ai/post/ai-personalization-in-ecommerce-lift-statistics)).
 
-Businesses that connect unified AI platforms — rather than cobbling together point solutions — generate **40% more revenue** than those relying on traditional tools (Source: [EComposer](https://ecomposer.io/blogs/ecommerce/ai-in-ecommerce-statistics)).
-
-Vortex IQ is how you access that advantage from day one.
+Businesses that unify their operations on an AI platform generate **40% more revenue from personalisation and automation** than those using traditional fragmented tools (Source: McKinsey & Company). Vortex IQ is how you access that advantage from day one — without a single line of code.
 
 ---
 
 ## The "First 5 Minutes" Checklist
 
-Onboarding is designed to require zero technical knowledge. Work through these four steps to activate your AI Command Centre:
+Onboarding is designed to require zero technical knowledge and zero code. Follow these steps to activate your AI Command Centre:
 
-1. **Create your workspace** — Register with your professional email or Google account.
+1. **Create your workspace** — Sign up with Google, use a Magic Link, or register with email and password.
 2. **Choose your account type** — Merchant (single brand) or Partner (agency managing multiple clients).
-3. **Connect your store** — Link Shopify, BigCommerce, or Adobe Commerce in one click.
-4. **Connect your marketing sources** — Add Google Analytics, Google Ads, or Facebook Ads.
+3. **Tell us your interests** — Select the areas that matter most: SEO, monitoring, analytics, or automation.
+4. **Connect your store** — Link Shopify, BigCommerce, or Adobe Commerce in one click.
 5. **Activate your first Agent** — Hire a Monitoring or Insights agent to begin receiving real-time alerts.
 
 !!! tip "Your 30-Day Free Trial Starts on Day One"
-    Every new account includes a full-featured 30-day trial — no credit card required upfront. All features, including Agent Hub and Nerve Centre alerting, are available immediately.
+    Every new account includes a full-featured 30-day trial — no credit card required upfront. All capabilities, including Agent Hub and Nerve Centre alerting, are available immediately from your first login.
 
 ---
 
@@ -49,84 +47,123 @@ Onboarding is designed to require zero technical knowledge. Work through these f
 
 ### Step 1: Choose Your Account Type
 
-When you first visit Vortex IQ, you will be asked to select your account type before registering.
+When you first visit Vortex IQ, you will be asked to select your account type. This choice configures your workspace and determines which multi-client features are available to you.
 
-<!-- screenshot: Account type selection screen showing two cards — "Merchant Account" and "Partner Account" with descriptions and icons -->
+![Create Account screen showing Merchant and Partner toggle, Sign up with Google, full name, company, email fields, and Get Magic Link button](img/viq-docs/create-an-account.png)
+
+*The Create Account screen showing the Merchant and Partner account type toggle, the "Sign up with Google" SSO option, registration fields, and the "Get Magic Link" passwordless sign-in option — along with three left-panel value propositions that describe what Vortex IQ delivers.*
 
 <div class="account-grid">
   <div class="type-card">
     <strong>Merchant Account</strong><br>
-    For brand owners, eCommerce managers, and in-house teams.<br>
-    <em>Choose this if you manage a single brand or store.</em>
+    For brand owners, eCommerce managers, and in-house teams managing a single store or brand.
   </div>
   <div class="type-card">
     <strong>Partner Account</strong><br>
-    For web agencies, system integrators, and tech partners.<br>
-    <em>Choose this if you manage multiple client accounts.</em>
+    For agencies, system integrators, and technology partners managing multiple client accounts from one workspace.
   </div>
 </div>
 
 ### Step 2: Sign Up Securely
 
-Vortex IQ offers two ways to create your account — both are passwordless-capable for maximum security:
+Vortex IQ provides three sign-up options — all delivering enterprise-grade identity protection from the moment your account is created:
 
-**Option A: Google SSO (Recommended)**
-Click **"Continue with Google"** to use your existing work credentials. This is the fastest sign-up path, and it activates enterprise-grade identity protection automatically.
+**Option A: Sign up with Google (Recommended)**
+Click **"Sign up with Google"** to use your existing work credentials. This is the fastest path, activating automatic identity verification and secure access instantly through Google's enterprise identity infrastructure.
 
-**Option B: Email & Password**
-Enter your professional email and choose a secure password (minimum 8 characters). Your workspace is created immediately — no waiting for approval.
+**Option B: Get Magic Link (Passwordless)**
+Enter your professional email and click **"Get Magic Link"**. A one-time secure link is sent to your inbox. Click it to sign in — no password is ever set or stored.
 
-<!-- screenshot: Sign-up screen showing the "Continue with Google" button and the email/password form -->
+**Option C: Email & Password**
+Enter your full name, company name, and professional email. Choose a secure password (minimum 8 characters). Your workspace is created immediately — no approval queue, no waiting period.
 
-!!! note "Managing Your Password"
-    If you ever need to reset or change your password:
+![Login screen showing Continue with Google, email and password form, Continue with Email, and Send Password Reset Link](img/viq-docs/login-sign-in.png)
 
-    1. Navigate to the Login page.
+*The Login screen showing all sign-in options: "Continue with Google", email and password form, "Continue with Email", and the "Send Password Reset Link" recovery option.*
+
+!!! note "Need to Reset Your Password?"
+    1. Go to the **Login** page.
     2. Enter your registered email address.
     3. Click **"Send Password Reset Link"**.
-    4. Check your inbox and click the link to set your new password securely.
+    4. Check your inbox and click the secure link to set your new password.
 
 ### Step 3: Register Your Organisation
 
-After signing in, you will complete your organisation profile. This powers how Vortex IQ labels reports, sends alerts, and communicates with your team.
+After signing in for the first time, you will complete your organisation profile. This information powers how Vortex IQ labels your reports, sends team alerts, and personalises your AI agents' communication.
 
-Fill in your:
-- **Organisation name** and website
-- **Contact details** (phone, address, city, country)
-- **Primary contact** (name + email for the account owner)
+Provide the following:
 
-<!-- screenshot: Organisation registration form with fields highlighted -->
+- **Organisation name** and website URL
+- **Contact details** — phone number, address, city, and country
+- **Primary account owner** — name and email address
 
 !!! note "Terms & Trial Activation"
-    Accept the Terms of Service to activate your 30-day free trial. Your account is immediately ready — no setup calls or approval queues.
+    Accepting the Terms of Service activates your 30-day free trial instantly. Your workspace is ready immediately — no setup calls, no approval queues, and no credit card required to start.
 
 ### Step 4: Complete the Onboarding Wizard
 
-Once registered, you are guided through a 4-step wizard that personalises your experience:
+Once registered, a guided four-step wizard personalises your Vortex IQ experience:
 
-1. **Tell us your interests** — Select which areas matter most to you (SEO, monitoring, analytics, automation). This helps Vortex IQ surface the most relevant agents and insights for your store.
+**Step 1 — Tell Us Your Interests**
+Select which operational areas matter most: SEO & Content, Revenue Monitoring, Analytics & Reporting, or Automation & Agents. This helps Vortex IQ surface the most relevant agents and insights for your specific store.
 
-2. **Connect your first data source** — Link at least one platform (see [Connecting Data Sources](configuration.md) for full details). This step unlocks your Command Centre and begins real-time data sync.
+**Step 2 — Connect Your First Data Source**
+Link at least one platform to unlock your Command Centre and begin real-time data synchronisation. Supported during onboarding: Shopify, BigCommerce, Google Analytics, and Facebook Ads. See [Connecting Data Sources](configuration.md) for full setup details.
 
-3. **Review your workspace** — See a summary of your connected sources and selected interests.
+**Step 3 — Review Your Workspace**
+See a summary of your connected sources, selected interest areas, and the AI agents ready to activate.
 
-4. **Launch your Command Centre** — You're live. Your AI OS is active.
+**Step 4 — Launch Your Command Centre**
+You are live. Your AI OS is active, your 30-day trial has started, and your first agents are standing by.
 
-<!-- screenshot: 4-step onboarding wizard with the "Connect Data" step highlighted and platform logos visible (Shopify, BigCommerce, Google Analytics) -->
+<!-- screenshot: The 4-step onboarding wizard progress indicator with the Connect Data step highlighted and platform logos for Shopify, BigCommerce, and Google Analytics visible -->
+
+!!! tip "Connecting Unlocks Everything"
+    Your onboarding is marked complete the moment you connect your first platform. You land directly in your Command Centre, with the Nerve Centre already scanning your store data in real time.
+
+### Step 5: Your Command Centre Is Live
+
+After completing onboarding, you arrive at your personalised Command Centre — the hub of your entire AI Operating System.
+
+![Post-login welcome screen showing the Ask Viq interface, AI Agent Library panel, and full sidebar navigation](img/viq-docs/post-login-welcome-screen.png)
+
+*The post-login Command Centre showing the AI Agent Library panel, the main workspace area, and the left-hand navigation sidebar featuring Ask Viq, Vortex Mind, Nerve Centre, Vortex Apps, Agent Hub, Vortex Memory, Settings, and Log Out.*
+
+---
+
+## Outcome & Impact: What Happens After You Connect
+
+The first five minutes of Vortex IQ are by design the last time setup ever feels like work. From the moment your store is connected, the platform runs continuously — no manual configuration, no scheduled maintenance.
+
+Merchants who complete onboarding and activate their first agent within the first session consistently see three immediate outcomes:
+
+- **Instant situational awareness** — Your Command Centre begins surfacing KPI cards and trend lines from your connected store data within minutes.
+- **Proactive alerts** — The Nerve Centre starts monitoring your site health, inventory status, and ad spend efficiency before you even close your browser tab.
+- **First agent action within 24 hours** — Your first AI recommendation or completed task is typically delivered within the first business day.
+
+The long-term impact is equally significant. Businesses that implement unified AI platforms report **15 to 25% revenue increases** within the first 90 days, driven by better personalisation, faster anomaly detection, and more efficient ad targeting. And **69% of retailers who implemented AI report direct, measurable revenue increases** traceable to that adoption (Source: [EComposer — AI in eCommerce Statistics 2025](https://ecomposer.io/blogs/ecommerce/ai-in-ecommerce-statistics)).
 
 ---
 
 ## AI Safety & Guardrails: How Vortex IQ Keeps You in Control
 
-From the moment you sign up, every action in Vortex IQ operates within a strict safety framework called **AI Guardrails**. This is not just a setting — it is the foundation of the platform.
+From your very first login, every action in Vortex IQ operates within a strict safety framework called **AI Guardrails**. This is the foundational architecture of the platform, not an optional feature.
 
-**Human-in-the-Loop by Default:** No AI agent can take a high-risk action (such as publishing a price change, triggering a bulk update, or issuing a refund) without your explicit approval. You remain the decision-maker; the AI surfaces recommendations and waits for your sign-off.
+**Human-in-the-Loop by Default:**
+No AI agent can take a high-impact action — such as publishing a price change, triggering a bulk content update, or issuing a refund — without your explicit review and approval. The AI surfaces the recommendation, presents its reasoning, and waits for your sign-off. You always remain the decision-maker.
 
-**Role-Based Access:** Your workspace is created with three pre-configured access levels — Administrator, Manager, and User — so every team member works within appropriate boundaries from day one. See [Roles & Permissions](governance/roles-permissions.md) for full details.
+**Role-Based Access from Day One:**
+Your workspace is provisioned with three pre-configured access levels during registration. Every team member you invite works within clearly defined boundaries:
 
-**Zero PII Storage:** When you connect your store, Vortex IQ processes insights — it does not store your customers' personal information. Only aggregated, anonymised signals are used to power recommendations.
+- **Administrator** — Full access to all settings, AI configuration, and security controls.
+- **Manager** — Can activate and deactivate agents, approve agent actions, and view all dashboards.
+- **User (Viewer)** — Can view the Command Centre and reports but cannot interact with agents or approve changes.
 
-**Encrypted Credentials:** Every platform connection (Shopify, BigCommerce, Google Analytics, etc.) is secured with OAuth 2.0 authorization and encrypted credential storage. Your API tokens are never exposed or shared.
+**Zero PII Storage:**
+When you connect your store, Vortex IQ processes aggregated business signals — it does not store your customers' personally identifiable information. Only anonymised patterns are used to power recommendations, in full compliance with GDPR and CCPA.
+
+**Encrypted Credentials:**
+Every platform connection is secured with industry-standard OAuth 2.0 authorization and encrypted credential storage. Your store access tokens are encrypted before saving and are never displayed in plain text after the initial connection.
 
 ---
 
@@ -136,30 +173,33 @@ From the moment you sign up, every action in Vortex IQ operates within a strict 
 | :--- | :---: | :---: |
 | Manage a single brand | ✅ | ✅ |
 | Manage multiple client workspaces | — | ✅ |
+| Multi-merchant workspace switcher | — | ✅ |
 | White-label reporting | — | ✅ |
 | Agent Hub access | ✅ | ✅ |
 | Nerve Centre monitoring | ✅ | ✅ |
 | 30-day free trial | ✅ | ✅ |
-| SSO / Google sign-in | ✅ | ✅ |
+| Google / Magic Link sign-in | ✅ | ✅ |
+| Role-based team access | ✅ | ✅ |
+| Encrypted credential storage | ✅ | ✅ |
 
 ---
 
 ## Frequently Asked Questions
 
-**Q: Do I need technical knowledge to set up Vortex IQ?**
-No. The entire onboarding process — from account creation to connecting your first store — is designed for non-technical merchants. There is no code to write, no files to configure, and no developer required.
+**Q: Do I need technical knowledge or developer support to set up Vortex IQ?**
+No. The entire onboarding process — from account creation to connecting your first store — is designed for non-technical merchants and operators. There is no code to write, no files to configure, and no developer required at any point.
+
+**Q: What is the difference between "Get Magic Link" and signing up with Google?**
+Both are passwordless and highly secure. "Get Magic Link" sends a one-time secure link to your email — click it to sign in with no password required. "Sign up with Google" uses your existing Google Workspace credentials to authenticate instantly. Google sign-in is the fastest option if you already use Google at work.
 
 **Q: Can I connect multiple stores to one account?**
-Yes. Partner Accounts are designed to manage multiple client storefronts from a single dashboard. Merchant Accounts support a primary store with the ability to add additional platforms as integrations.
+Yes. Partner Accounts are designed to manage multiple client storefronts from a single dashboard using the multi-merchant workspace switcher. Merchant Accounts support a primary store with the ability to add additional platform integrations from Settings at any time.
 
 **Q: What happens to my data if I cancel my subscription?**
-Your workspace data is retained for 30 days after cancellation, giving you time to export reports or reconnect if needed. We do not store your customers' personal information at any point.
+Your workspace data is retained for 30 days after cancellation, giving you time to export reports or reconnect if needed. Vortex IQ does not store your customers' personal information at any point during or after your subscription.
 
-**Q: Is the 30-day trial really free?**
-Yes — all features are available immediately, with no credit card required to start. At the end of your trial, you will be presented with subscription options. If you choose not to subscribe, your account moves to a limited free tier.
-
-**Q: What platforms can I connect during onboarding?**
-During onboarding you can connect: Shopify, BigCommerce, Google Analytics, and Facebook Ads. Additional platforms — including Adobe Commerce, Google Ads, Stripe, and Slack — can be added at any time from the [Connected Sources](configuration.md) settings page.
+**Q: What platforms can I connect during the initial onboarding wizard?**
+During onboarding you can connect Shopify, BigCommerce, Google Analytics (GA4), and Facebook Ads. Additional platforms — including Adobe Commerce, Google Ads, Stripe, Slack, and Microsoft Teams — can be added at any time from the **Settings → Connected Sources** page.
 
 ---
 
